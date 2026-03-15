@@ -53,4 +53,6 @@ function enemy_init(){
 	register_enemy("arson_mouse",{"name":"纵火鼠","_obj":obj_arson_mouse,"hp":600,"shield":0,"description":"纵火鼠：投掷3*3炸弹","speed":0.60,"atk":10,"cycle":36,"range":90,"ash_proof":false,"spr":spr_arson_mouse_bomb,"feature":"land"})
 	register_enemy("non_mainstream_mouse",{"name":"非主流鼠","_obj":obj_non_mainstream_mouse,"hp":660,"shield":0,"description":"非主流鼠：躲避子弹","speed":0.30,"atk":10,"cycle":36,"range":90,"ash_proof":false,"spr":spr_non_mainstream_mouse,"feature":"land"})
 	register_enemy("flute_mouse",{"name":"魔笛鼠","_obj":obj_flute_mouse,"hp":1200,"shield":0,"description":"魔笛鼠：治疗老鼠","speed":0.30,"atk":10,"cycle":36,"range":90,"ash_proof":false,"spr":spr_flute_mouse,"feature":"land"})
+	register_enemy("panda_mouse",{"name":"熊猫鼠","_obj":obj_panda_mouse,"hp":1800,"shield":0,"description":"熊猫鼠：生命值和伤害极高，但攻速慢","speed":0.27,"atk":900,"cycle":108,"range":180,"ash_proof":true,"spr":spr_panda_mouse_has_small,"feature":"land"})
+	register_enemy("can_mouse",{"name":"罐头鼠","_obj":obj_can_mouse,"hp":800,"shield":0,"description":"罐头鼠：借助爆炸的动力跳跃","speed":0.30,"atk":10,"cycle":36,"range":90,"ash_proof":false,"spr":spr_can_mouse_with_can,"feature":"land"})
 }

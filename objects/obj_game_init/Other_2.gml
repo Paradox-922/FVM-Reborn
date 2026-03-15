@@ -40,9 +40,9 @@ load_file(global.save_slot)
 	unlock_card("double_long_bao",7,0,6)
 	unlock_card("mouse_clip",7,0,6)
 	unlock_card("coke_bomb",7,0,6)
-	unlock_card("wooden_plate",7,0,6)
+	unlock_card("wooden_plate",7,1,6)
 	unlock_card("ice_long_bao",7,0,6)
-	unlock_card("goblet_lamp",7,0,6)
+	unlock_card("goblet_lamp",7,1,6)
 	unlock_card("coffee_cup",7,0,6)
 	unlock_card("salad_pult",7,0,6)
 	unlock_card("coffee_pot",7,0,6)
@@ -81,10 +81,10 @@ load_file(global.save_slot)
 	unlock_card("skewer_bomb",7,0,6)
 	
 	global.save_data.player.gold = 20000000
-	global.save_data.player.level = 21
-	global.save_data.unlocked_items.max_card_level = 6
-	global.save_data.unlocked_items.max_skill_level = 7
-	global.save_data.unlocked_items.max_gem_level = 5
+	global.save_data.player.level = 22
+	global.save_data.unlocked_items.max_card_level = 7
+	global.save_data.unlocked_items.max_skill_level = 6
+	global.save_data.unlocked_items.max_gem_level = 6
 	global.save_data.unlocked_items.max_slot = 21
 	global.save_data.unlocked_items.shovel = "copper"
 

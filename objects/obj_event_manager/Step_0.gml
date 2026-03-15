@@ -64,8 +64,13 @@ if global.level_id == "mustard_cottage_daytime" && event_timer == 1{
 	var inst = instance_create_depth(obs_pos.x,obs_pos.y-35,-1200,obj_obstacle)
 	inst.row = 5
 }
+if global.level_id == "mustard_cottage_night" && event_timer == 1{
+	var obs_pos = get_world_position_from_grid(6,1)
+	var inst = instance_create_depth(obs_pos.x,obs_pos.y-35,-1200,obj_obstacle)
+	inst.row = 1
+}
 
-if global.level_id == "mustard_cottage_daytime" && obj_battle.current_wave >= global.level_file.elite_wave && obj_battle.level_stage != "boss"{
+if (global.level_id == "mustard_cottage_daytime" || global.level_id == "mustard_cottage_night") && obj_battle.current_wave >= global.level_file.elite_wave && obj_battle.level_stage != "boss"{
 	if event_timer mod 1800 == 5{
 		var b_col = irandom_range(0,8)
 		var b_row = irandom_range(0,6)

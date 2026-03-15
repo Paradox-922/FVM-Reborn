@@ -509,11 +509,79 @@ function task_init(){
 					{
 						"type":"item",
 						"item_id":"middle_crystal",
-						"amount":10
+						"amount":15
 					},
 					{
 						"type":"gold",
 						"amount":1500
+					}
+				]
+			}
+		)
+		register_task("main_level_15",
+			{
+				"type":"main_task",
+				"title":"章鱼小丸子的诱惑",
+				"desc":"保罗是什么？我只知道章鱼小丸子很好吃……",
+				"single_game":false,//非单局完成
+				"oneshot":false,//非一命完成
+				"task_unlock":"main_level_16",
+				"requirements":[
+					{
+						"type":"level_complete",
+						"target_level":"mustard_cottage_night",
+						"desc":"通关一次芥末小屋（夜）",
+						"require":1,
+					}
+				],
+				"rewards":[
+					{
+						"type":"item",
+						"item_id":"secret_spices",
+						"amount":30
+					},
+					{
+						"type":"item",
+						"item_id":"middle_crystal",
+						"amount":25
+					},
+					{
+						"type":"gold",
+						"amount":2500
+					}
+				]
+			}
+		)
+		register_task("main_level_16",
+			{
+				"type":"main_task",
+				"title":"横行霸道",
+				"desc":"据说螃蟹只能横着走……不对，它怎么还能遁地？",
+				"single_game":false,//非单局完成
+				"oneshot":false,//非一命完成
+				"task_unlock":"main_level_17",
+				"requirements":[
+					{
+						"type":"level_complete",
+						"target_level":"mint_beach_daytime",
+						"desc":"通关一次薄荷海滩（日）",
+						"require":1,
+					}
+				],
+				"rewards":[
+					{
+						"type":"item",
+						"item_id":"secret_spices",
+						"amount":40
+					},
+					{
+						"type":"item",
+						"item_id":"middle_crystal",
+						"amount":30
+					},
+					{
+						"type":"gold",
+						"amount":3000
 					}
 				]
 			}

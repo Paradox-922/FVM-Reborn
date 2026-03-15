@@ -53,4 +53,6 @@ function enemy_info_island_init(){
 	register_enemy_info_island("arson_mouse","入场后，如果碰到卡片，则会向本行最左侧的一张卡片投掷炸弹，炸弹会摧\n毁3*3范围内的卡片。如果没有碰到卡片，则会在7秒后投掷炸弹。投掷后速\n度降低至0.3。")
 	register_enemy_info_island("non_mainstream_mouse","使用华丽的舞步躲避子弹，但是无法躲避咖啡喷雾、鱼刺、炸弹等非实体伤\n害。啃食时无法躲避子弹。")
 	register_enemy_info_island("flute_mouse","入场5秒后会奏响笛子，为场上所有敌人恢复200点生命值，如果该敌人的生\n命上限不足200则会补足200。首次吹奏后，每10秒都会再次吹奏笛子。")
+	register_enemy_info_island("panda_mouse","巨型老鼠，会对你的防御卡造成毁灭性打击。\n生命值降低至一半时，如果自身在第五列之外，则会向第3或4列投掷一只生\n命值为100的小熊猫鼠。\nTip：可以利用冷却快的卡片诱使其攻击，拖延其前进")
+	register_enemy_info_island("can_mouse","第一次遇到爆炸时，会免疫伤害，并借助爆炸动力向前跳跃，随后扔下罐头。\n失去罐头后无法免疫爆炸。\nTip：猫猫箱可以将罐头吓掉。")
 }
