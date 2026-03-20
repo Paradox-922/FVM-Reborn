@@ -6,6 +6,9 @@ if hp <= 0 && state != ENEMY_STATE.DEAD{
 }
 
 event_inherited();
+if global.is_paused || is_frozen || is_stun{
+	exit
+}
 
 var target_pos = get_world_position_from_grid(target_col,target_row)
 

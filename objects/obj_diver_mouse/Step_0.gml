@@ -8,9 +8,11 @@ if hp <= 0  && state != ENEMY_STATE.DEAD{
 		else{
 			if global.grid_terrains[grid_row][grid_col].type == "water"{
 				sprite_index = spr_diver_mouse
+				death_anim = 10
 			}
 			else{
 				sprite_index = spr_diver_mouse_land
+				death_anim = 13
 			}
 		}
 		

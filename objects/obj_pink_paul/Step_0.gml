@@ -14,7 +14,7 @@ if !appear{
 		enemy_pos = get_world_position_from_grid(8,enemy_row)
 	}
 	else{
-		enemy_pos = get_world_position_from_grid(irandom_range(2,4),enemy_row)
+		enemy_pos = get_world_position_from_grid(irandom_range(2,6),enemy_row)
 	}
 	x = enemy_pos.x - 80
 	y = enemy_pos.y + 30
@@ -173,7 +173,7 @@ switch state{
 				enemy_pos = get_world_position_from_grid(8,enemy_row)
 			}
 			else{
-				enemy_pos = get_world_position_from_grid(irandom_range(2,4),enemy_row)
+				enemy_pos = get_world_position_from_grid(irandom_range(2,6),enemy_row)
 			}
 			x = enemy_pos.x - 80
 			y = enemy_pos.y + 30

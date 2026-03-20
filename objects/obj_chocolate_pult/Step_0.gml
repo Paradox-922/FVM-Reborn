@@ -17,7 +17,7 @@ if timer == 0{
 	}
 }
 
-if is_frozen{
+if is_frozen || state == CARD_STATE.SLEEP{
 	exit
 }
 

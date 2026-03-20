@@ -7,7 +7,7 @@ if is_slowdown{
 }
 
 event_inherited(); 
-if is_frozen{
+if is_frozen || state == CARD_STATE.SLEEP{
 	exit
 }
 

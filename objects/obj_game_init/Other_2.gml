@@ -71,7 +71,7 @@ load_file(global.save_slot)
 	unlock_card("wooden_cork",7,0,6)
 	unlock_card("sausage",7,0,6)
 	unlock_card("oil_lamp",7,0,6)
-	unlock_card("ventilation_fan",7,0,6)
+	unlock_card("ventilation_fan",7,1,6)
 	unlock_card("firework_dragon",7,0,6)
 	unlock_card("cherry_pudding",12,2,7)
 	unlock_card("double_ice_long_bao",7,0,6)
@@ -81,7 +81,7 @@ load_file(global.save_slot)
 	unlock_card("skewer_bomb",7,0,6)
 	
 	global.save_data.player.gold = 20000000
-	global.save_data.player.level = 22
+	global.save_data.player.level = 25
 	global.save_data.unlocked_items.max_card_level = 7
 	global.save_data.unlocked_items.max_skill_level = 6
 	global.save_data.unlocked_items.max_gem_level = 6

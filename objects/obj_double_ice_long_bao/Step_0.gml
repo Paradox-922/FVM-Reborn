@@ -3,7 +3,7 @@ if global.is_paused{
 }
 event_inherited(); 
 
-if is_frozen{
+if state == CARD_STATE.SLEEP{
 	exit
 }
 var current_flash_speed = flash_speed

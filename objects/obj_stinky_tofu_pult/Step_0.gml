@@ -19,7 +19,7 @@ if timer == 0{
 		image_index += attack_anim
 	}
 }
-if is_frozen{
+if is_frozen || state == CARD_STATE.SLEEP{
 	exit
 }
 // 检测自身右方是否有敌人，并获取最近的敌人

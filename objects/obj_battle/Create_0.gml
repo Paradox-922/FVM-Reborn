@@ -34,6 +34,7 @@ global.grid_rows = global.level_file.map_rows
 chomp_sound_list = ds_list_create()
 battle_time = 0
 boss_count = 0
+map_spr_index = 0
 
 speed_up = false
 time_limit = -1

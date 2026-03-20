@@ -9,8 +9,8 @@
   "name":"obj_paul_bullet",
   "overriddenProperties":[],
   "parent":{
-    "name":"BOSS",
-    "path":"folders/物体/Enemy/volcanic_island/BOSS.yy",
+    "name":"pink_paul",
+    "path":"folders/物体/Enemy/volcanic_island/BOSS/pink_paul.yy",
   },
   "parentObjectId":null,
   "persistent":false,

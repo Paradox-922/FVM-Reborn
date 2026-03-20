@@ -121,7 +121,7 @@ function slots_init(){
 	]);
 	register_card("takoyaki", obj_takoyaki, [
 	    {"shape":0, "sprite":spr_takoyaki, "cost":225, "cooldown":50*60, "description":"章鱼烧：甩出两发追踪飞镖","plant_type":"normal","feature_type":"normal","target_card":"wooden_plate"},
-	    {"shape":1, "sprite":spr_takoyaki_1, "cost":225, "cooldown":50*60, "description":"两栖章鱼烧：甩出两发追踪飞镖","plant_type":"normal","feature_type":"amphi","target_card":"none"},
+	    {"shape":1, "sprite":spr_takoyaki_icon_1, "cost":225, "cooldown":50*60, "description":"两栖章鱼烧：甩出两发追踪飞镖","plant_type":"normal","feature_type":"amphi","target_card":"none","place_preview":spr_takoyaki_1},
 		{"shape":2, "sprite":spr_takoyaki_2, "cost":225, "cooldown":50*60, "description":"火影章鱼烧：甩出四发追踪飞镖","plant_type":"normal","feature_type":"amphi","target_card":"none"}
 	]);
 	register_card("wooden_cork",obj_wooden_cork,[

@@ -1,6 +1,11 @@
 if global.is_paused{
 	exit
 }
+if hp <= 0 && state != ENEMY_STATE.DEAD{
+	state = ENEMY_STATE.DEAD
+	timer = 0 
+	sprite_index = spr_rowboat_mouse
+}
 
 // Inherit the parent event
 event_inherited();

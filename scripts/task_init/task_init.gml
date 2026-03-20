@@ -586,6 +586,108 @@ function task_init(){
 				]
 			}
 		)
+		register_task("main_level_17",
+			{
+				"type":"main_task",
+				"title":"夜会金发美人",
+				"desc":"下次我再看见螃蟹时，我只希望它背上不要坐着一只金发老鼠……",
+				"single_game":false,//非单局完成
+				"oneshot":false,//非一命完成
+				"task_unlock":"main_level_18",
+				"requirements":[
+					{
+						"type":"level_complete",
+						"target_level":"mint_beach_night",
+						"desc":"通关一次薄荷海滩（夜）",
+						"require":1,
+					}
+				],
+				"rewards":[
+					{
+						"type":"item",
+						"item_id":"secret_spices",
+						"amount":45
+					},
+					{
+						"type":"item",
+						"item_id":"middle_crystal",
+						"amount":40
+					},
+					{
+						"type":"gold",
+						"amount":3500
+					}
+				]
+			}
+		)
+		register_task("main_level_18",
+			{
+				"type":"main_task",
+				"title":"偷芝士的小老鼠",
+				"desc":"潮水已然退去",
+				"single_game":false,//非单局完成
+				"oneshot":false,//非一命完成
+				"task_unlock":"main_level_19",
+				"requirements":[
+					{
+						"type":"level_complete",
+						"target_level":"cheese_castle",
+						"desc":"通关一次芝士城堡",
+						"require":1,
+					}
+				],
+				"rewards":[
+					{
+						"type":"item",
+						"item_id":"secret_spices",
+						"amount":50
+					},
+					{
+						"type":"item",
+						"item_id":"middle_crystal",
+						"amount":40
+					},
+					{
+						"type":"gold",
+						"amount":5000
+					}
+				]
+			}
+		)
+		register_task("main_level_19",
+			{
+				"type":"main_task",
+				"title":"雨林烧烤",
+				"desc":"地上坑坑洼洼的，满身都是泥。",
+				"single_game":false,//非单局完成
+				"oneshot":false,//非一命完成
+				"task_unlock":"main_level_20",
+				"requirements":[
+					{
+						"type":"level_complete",
+						"target_level":"charcoal_jungle",
+						"desc":"通关一次炭烧雨林（日）",
+						"require":1,
+					}
+				],
+				"rewards":[
+					{
+						"type":"item",
+						"item_id":"secret_spices",
+						"amount":50
+					},
+					{
+						"type":"item",
+						"item_id":"middle_crystal",
+						"amount":40
+					},
+					{
+						"type":"gold",
+						"amount":4500
+					}
+				]
+			}
+		)
 	}
 	{//注册所有支线任务
 		register_task("card_upgrade_1",
@@ -852,6 +954,45 @@ function task_init(){
 				]
 			}
 		)
+		register_task("flame_save_4",
+			{
+				"type":"challenge_task",
+				"title":"芝士城堡节约之旅",
+				"desc":"冒险途中突发状况很多，需要积攒火苗才能及时应对。",
+				"single_game":true,//仅限单局游戏内完成
+				"oneshot":false,//非一命任务
+				"task_unlock":"flame_save_5",
+				"requirements":[
+					{
+						"type":"level_complete",
+						"target_level":"madoki_port",
+						"desc":"通关一次芝士城堡",
+						"require":1,
+					},
+					{
+						"type":"flame_left",
+						"desc":"关卡结算时，剩余5000以上的火苗",
+						"require":5000,
+					},
+				],
+				"rewards":[
+					{
+						"type":"item",
+						"item_id":"secret_spices",
+						"amount":75
+					},
+					{
+						"type":"item",
+						"item_id":"middle_crystal",
+						"amount":10
+					},
+					{
+						"type":"gold",
+						"amount":7500
+					}
+				]
+			}
+		)
 		register_task("perfect_challenge_1",
 			{
 				"type":"challenge_task",
@@ -999,6 +1140,55 @@ function task_init(){
 				]
 			}
 		)
+		register_task("perfect_challenge_4",
+			{
+				"type":"challenge_task",
+				"title":"完美挑战-4",
+				"desc":"在限定条件下通关指定关卡，证明你的实力。",
+				"single_game":true,//仅限单局游戏内完成
+				"oneshot":false,//非一命任务
+				"task_unlock":"perfect_challenge_5",
+				"requirements":[
+					{
+						"type":"level_complete",
+						"target_level":"madoki_port",
+						"desc":"通关一次玛朵奇港",
+						"require":1,
+					},
+					{
+						"type":"cat_loss",
+						"desc":"不得失去任何猫",
+						"require":0,
+					},
+					{
+						"type":"card_loss",
+						"desc":"不得损失超过60张卡片",
+						"require":60,
+					},
+				],
+				"rewards":[
+					{
+						"type":"item",
+						"item_id":"secret_spices",
+						"amount":80
+					},
+					{
+						"type":"item",
+						"item_id":"middle_crystal",
+						"amount":20
+					},
+					{
+						"type":"gold",
+						"amount":10000
+					},
+					{
+						"type":"item",
+						"item_id":"clover_1",
+						"amount":2
+					},
+				]
+			}
+		)
 		register_task("hardcore_challenge_1",
 			{
 				"type":"challenge_task",
@@ -1102,6 +1292,56 @@ function task_init(){
 						"type":"level_complete",
 						"target_level":"cheese_castle",
 						"desc":"通关一次芝士城堡",
+						"require":1,
+					},
+					{
+						"type":"weapon_limit",
+						"desc":"不能装备任何武器和宝石",
+						"require":1,
+					},
+					{
+						"type":"card_type_limit",
+						"desc":"不能携带任何一次性的伤害类卡片",
+						"limit_card_type":"bomb",
+						"require":1,
+					},
+				],
+				"rewards":[
+					{
+						"type":"item",
+						"item_id":"secret_spices",
+						"amount":80
+					},
+					{
+						"type":"gold",
+						"amount":10000
+					},
+					{
+						"type":"item",
+						"item_id":"middle_crystal",
+						"amount":10
+					},
+					{
+						"type":"item",
+						"item_id":"clover_1",
+						"amount":1
+					},
+				]
+			}
+		)
+		register_task("hardcore_challenge_4",
+			{
+				"type":"challenge_task",
+				"title":"极限挑战-4",
+				"desc":"你能在缺少输出的情况下完成关卡吗？",
+				"single_game":true,//仅限单局游戏内完成
+				"oneshot":false,//非一命任务
+				"task_unlock":"hardcore_challenge_5",
+				"requirements":[
+					{
+						"type":"level_complete",
+						"target_level":"madoki_port",
+						"desc":"通关一次玛朵奇港",
 						"require":1,
 					},
 					{

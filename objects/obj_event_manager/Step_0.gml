@@ -69,6 +69,14 @@ if global.level_id == "mustard_cottage_night" && event_timer == 1{
 	var inst = instance_create_depth(obs_pos.x,obs_pos.y-35,-1200,obj_obstacle)
 	inst.row = 1
 }
+if global.level_id == "cheese_castle" && event_timer == 1{
+	var obs_pos = get_world_position_from_grid(6,1)
+	var inst = instance_create_depth(obs_pos.x,obs_pos.y-35,-1200,obj_obstacle)
+	inst.row = 1
+	var obs_pos2 = get_world_position_from_grid(6,5)
+	var inst2 = instance_create_depth(obs_pos2.x,obs_pos2.y-35,-1200,obj_obstacle)
+	inst2.row = 5
+}
 
 if (global.level_id == "mustard_cottage_daytime" || global.level_id == "mustard_cottage_night") && obj_battle.current_wave >= global.level_file.elite_wave && obj_battle.level_stage != "boss"{
 	if event_timer mod 1800 == 5{
@@ -76,5 +84,36 @@ if (global.level_id == "mustard_cottage_daytime" || global.level_id == "mustard_
 		var b_row = irandom_range(0,6)
 		var target_pos = get_world_position_from_grid(b_col,b_row) 
 		var inst = instance_create_depth(target_pos.x,target_pos.y+38,-500,obj_pink_paul_tentacle)
+	}
+}
+
+if global.level_id == "cheese_castle" && obj_battle.current_wave >= 2 && obj_battle.level_stage != "boss" && obj_battle.current_wave < global.level_file.elite_wave{
+	if event_timer mod 1800 == 5{
+		var b_col = irandom_range(0,8)
+		var b_row = irandom_range(0,6)
+		var target_pos = get_world_position_from_grid(b_col,b_row) 
+		var inst = instance_create_depth(target_pos.x,target_pos.y+38,-500,obj_pink_paul_tentacle)
+	}
+}
+
+if global.level_id == "cheese_castle" && obj_battle.current_wave == 6 && obj_battle.current_subwave == 0{
+	if obj_battle.map_spr_index != 3{
+		obj_battle.map_spr_index = 3
+		for(var i = 0 ; i < global.grid_rows ; i++){
+			for(var j = 0 ; j < global.grid_cols ; j++){
+				global.grid_terrains[i][j].type = "normal"
+			}
+		}
+	}
+	with obj_card_parent{
+		if plant_id == "wooden_plate"{
+			instance_destroy()
+		}
+	}
+}
+
+if global.level_id == "cheese_castle" && obj_battle.current_wave == 5 && obj_battle.current_subwave == 9 && obj_battle.wave_timer == 1{
+	for(var i = 0 ; i < 7 ; i ++){
+		global.row_feature[i] = "land"
 	}
 }

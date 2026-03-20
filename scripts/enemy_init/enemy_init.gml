@@ -51,8 +51,10 @@ function enemy_init(){
 	register_enemy("caribbean_mouse",{"name":"加勒比鼠","_obj":obj_caribbean_mouse,"hp":810,"shield":0,"description":"加勒比鼠：揭示一大波老鼠来袭","speed":0.45,"atk":10,"cycle":36,"range":90,"ash_proof":false,"spr":spr_caribbean_mouse,"feature":"land"})
 	register_enemy("penguin_mouse",{"name":"陆企鹅鼠","_obj":obj_penguin_mouse,"hp":170,"shield":0,"description":"陆企鹅鼠：投掷冰冻炸弹","speed":0.60,"atk":10,"cycle":36,"range":90,"ash_proof":false,"spr":spr_penguin_mouse_bomb,"feature":"land"})
 	register_enemy("arson_mouse",{"name":"纵火鼠","_obj":obj_arson_mouse,"hp":600,"shield":0,"description":"纵火鼠：投掷3*3炸弹","speed":0.60,"atk":10,"cycle":36,"range":90,"ash_proof":false,"spr":spr_arson_mouse_bomb,"feature":"land"})
-	register_enemy("non_mainstream_mouse",{"name":"非主流鼠","_obj":obj_non_mainstream_mouse,"hp":660,"shield":0,"description":"非主流鼠：躲避子弹","speed":0.30,"atk":10,"cycle":36,"range":90,"ash_proof":false,"spr":spr_non_mainstream_mouse,"feature":"land"})
+	register_enemy("non_mainstream_mouse",{"name":"非主流鼠","_obj":obj_non_mainstream_mouse,"hp":660,"shield":0,"description":"非主流鼠：躲避子弹","speed":0.60,"atk":10,"cycle":36,"range":90,"ash_proof":false,"spr":spr_non_mainstream_mouse,"feature":"land"})
 	register_enemy("flute_mouse",{"name":"魔笛鼠","_obj":obj_flute_mouse,"hp":1200,"shield":0,"description":"魔笛鼠：治疗老鼠","speed":0.30,"atk":10,"cycle":36,"range":90,"ash_proof":false,"spr":spr_flute_mouse,"feature":"land"})
 	register_enemy("panda_mouse",{"name":"熊猫鼠","_obj":obj_panda_mouse,"hp":1800,"shield":0,"description":"熊猫鼠：生命值和伤害极高，但攻速慢","speed":0.27,"atk":900,"cycle":108,"range":180,"ash_proof":true,"spr":spr_panda_mouse_has_small,"feature":"land"})
 	register_enemy("can_mouse",{"name":"罐头鼠","_obj":obj_can_mouse,"hp":800,"shield":0,"description":"罐头鼠：借助爆炸的动力跳跃","speed":0.30,"atk":10,"cycle":36,"range":90,"ash_proof":false,"spr":spr_can_mouse_with_can,"feature":"land"})
+	register_enemy("blonde_mary",{"name":"金发玛丽","_obj":obj_blonde_mary,"hp":30000,"shield":0,"description":"金发玛丽：火山岛BOSS","speed":0.3,"atk":10,"cycle":36,"range":90,"ash_proof":true,"spr":spr_blonde_mary_idle,"feature":"land"})
+	register_enemy("pete",{"name":"钢爪皮特","_obj":obj_pete,"hp":40000,"shield":0,"description":"钢爪皮特：芝士城堡BOSS","speed":0.3,"atk":10,"cycle":36,"range":90,"ash_proof":true,"spr":spr_pete_idle,"feature":"land"})
 }

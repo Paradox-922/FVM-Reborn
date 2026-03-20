@@ -2,6 +2,7 @@
 event_inherited();
 hp = 660
 maxhp = 660
+move_speed = 0.60
 move_anim = 8
 attack_anim = 6
 death_anim = 14

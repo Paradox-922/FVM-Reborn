@@ -10,8 +10,8 @@
   "name":"obj_pink_paul_tentacle_drop",
   "overriddenProperties":[],
   "parent":{
-    "name":"BOSS",
-    "path":"folders/物体/Enemy/volcanic_island/BOSS.yy",
+    "name":"pink_paul",
+    "path":"folders/物体/Enemy/volcanic_island/BOSS/pink_paul.yy",
   },
   "parentObjectId":null,
   "persistent":false,
