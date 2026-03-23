@@ -150,14 +150,21 @@ switch state{
 		}
 		
 		if timer == 5 * 5 - 1{
+			awake_card_id_list = []
 			with obj_card_parent{
-				state = CARD_STATE.SLEEP
+				if state != CARD_STATE.SLEEP{
+					state = CARD_STATE.SLEEP
+					array_push(other.awake_card_id_list,id)
+				}
 			}
 		}
 		if timer >= 325{
 			with obj_card_parent{
-				state = CARD_STATE.IDLE
+				if array_get_index(other.awake_card_id_list,id) != -1{
+					state = CARD_STATE.IDLE
+				}
 			}
+			awake_card_id_list = []
 			jump_times = 0
 			timer = 0
 			state = BOSS_STATE.IDLE
@@ -206,8 +213,11 @@ switch state{
 		if timer == 240{
 			var enemy_row = irandom_range(0,global.grid_rows-1)
 			var enemy_pos = {}
-			if skill_count == 1 || skill_count == 3{
+			if skill_count == 1{
 				enemy_pos = get_world_position_from_grid(9,3)
+			}
+			else if skill_count == 3{
+				enemy_pos = get_world_position_from_grid(9,enemy_row)
 			}
 			else{
 				enemy_pos = get_world_position_from_grid(4,enemy_row)

@@ -464,6 +464,7 @@
     {"id":{"name":"obj_little_panda_mouse","path":"objects/obj_little_panda_mouse/obj_little_panda_mouse.yy",},},
     {"id":{"name":"obj_long_bao_gun","path":"objects/obj_long_bao_gun/obj_long_bao_gun.yy",},},
     {"id":{"name":"obj_machine_mouse","path":"objects/obj_machine_mouse/obj_machine_mouse.yy",},},
+    {"id":{"name":"obj_map_change_effect","path":"objects/obj_map_change_effect/obj_map_change_effect.yy",},},
     {"id":{"name":"obj_map_manager","path":"objects/obj_map_manager/obj_map_manager.yy",},},
     {"id":{"name":"obj_mario_cave","path":"objects/obj_mario_cave/obj_mario_cave.yy",},},
     {"id":{"name":"obj_mario_mouse","path":"objects/obj_mario_mouse/obj_mario_mouse.yy",},},

@@ -19,7 +19,9 @@ with obj_battle{
 	}
 }
 with obj_card_parent{
-	state = CARD_STATE.IDLE
+	if array_get_index(other.awake_card_id_list,id) != -1{
+		state = CARD_STATE.IDLE
+	}
 }
 global.save_data.unlocked_items.arno_killed = true
 if global.save_data.unlocked_items.mario_mouse_killed && global.save_data.player.level < 7{

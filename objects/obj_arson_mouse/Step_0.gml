@@ -19,7 +19,7 @@ if (throw_timer <= 0 || state == ENEMY_STATE.ATTACK) && !throwed && hp > 0{
 
 if state == ENEMY_STATE.APPEAR{
 	
-	if timer <= 10*flash_speed * 3 - 1{
+	if timer <= (10*flash_speed * 5 - 1){
 		sprite_index = spr_arson_mouse_ready
 		if hp > maxhp * hurt_rate{
 			image_index = floor(timer/flash_speed) mod 10
@@ -31,18 +31,18 @@ if state == ENEMY_STATE.APPEAR{
 	else{
 		sprite_index = spr_arson_mouse_throw
 		if hp > maxhp * hurt_rate{
-			image_index = floor((timer-10*flash_speed * 3)/flash_speed) mod 9
+			image_index = floor((timer-10*flash_speed * 5)/flash_speed) mod 9
 		}
 		else{
-			image_index = floor((timer-10*flash_speed * 3)/flash_speed) mod 9 + 9
+			image_index = floor((timer-10*flash_speed * 5)/flash_speed) mod 9 + 9
 		}
 	}
-	if timer >= flash_speed * 39 - 1 or hp <= 0{
+	if timer >= (flash_speed * 59 - 1) or hp <= 0{
 		state = ENEMY_STATE.NORMAL
 		sprite_index = spr_arson_mouse
 		move_speed = 0.3
 	}
-	if timer == 6 * flash_speed - 1 + 10 * flash_speed * 3{
+	if timer ==( 6 * flash_speed - 1 + 10 * flash_speed * 5){
 		for(var i = 0 ; i < grid_col;i++){
 			target_col = -1
 			var plant_list = ds_grid_get(global.grid_plants,i,grid_row)

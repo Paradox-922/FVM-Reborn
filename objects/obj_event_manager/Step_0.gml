@@ -122,11 +122,33 @@ if global.level_id == "cheese_castle" && obj_battle.current_wave >= 2 && obj_bat
 }
 
 if global.level_id == "cheese_castle" && obj_battle.current_wave == 6 && obj_battle.current_subwave == 0{
-	if obj_battle.map_spr_index != 3{
+	cheese_castle_anim_timer++
+	if cheese_castle_anim_timer == 1{
+		var inst = instance_create_depth(0,0,49,obj_map_change_effect)
+		inst.map_spr = spr_cheese_castle
+		inst.map_spr_index = 0
+		obj_battle.map_spr_index = 1
+	}
+	else if cheese_castle_anim_timer == 45{
+		var inst = instance_create_depth(0,0,49,obj_map_change_effect)
+		inst.map_spr = spr_cheese_castle
+		inst.map_spr_index = 1
+		obj_battle.map_spr_index = 2
+	}
+	else if cheese_castle_anim_timer == 90{
+		var inst = instance_create_depth(0,0,49,obj_map_change_effect)
+		inst.map_spr = spr_cheese_castle
+		inst.map_spr_index = 2
 		obj_battle.map_spr_index = 3
+	}
+	
+	if obj_battle.map_spr_index != 3{
+		
 		for(var i = 0 ; i < global.grid_rows ; i++){
 			for(var j = 0 ; j < global.grid_cols ; j++){
-				global.grid_terrains[i][j].type = "normal"
+				if global.grid_terrains[i][j].type == "water"{
+					global.grid_terrains[i][j].type = "normal"
+				}
 			}
 		}
 	}

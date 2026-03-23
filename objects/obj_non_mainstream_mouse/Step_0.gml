@@ -30,5 +30,8 @@ if state = ENEMY_STATE.ACTING{
 		sprite_index = spr_non_mainstream_mouse
 		state = ENEMY_STATE.NORMAL
 		dance_cooldown = 120
+		if is_slowdown{
+			dance_cooldown = 240
+		}
 	}
 }

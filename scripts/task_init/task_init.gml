@@ -817,8 +817,8 @@ function task_init(){
 				"requirements":[
 					{
 						"type":"card_upgrade",
-						"target_card_level":20,
-						"desc":"请等待后续开放更高星级",
+						"target_card_level":7,
+						"desc":"将5张卡片强化至7星",
 						"require":5,
 					}
 				],
@@ -831,6 +831,122 @@ function task_init(){
 					{
 						"type":"gold",
 						"amount":3500
+					}
+				]
+			}
+		)
+		register_task("card_upgrade_6",
+			{
+				"type":"side_task",
+				"title":"增强实力-6",
+				"desc":"只有拥有更高级的卡片才能抵御越来越多的敌人。",
+				"single_game":false,//非单局完成
+				"oneshot":false,//非一命完成
+				"task_unlock":"card_upgrade_7",
+				"requirements":[
+					{
+						"type":"card_upgrade",
+						"target_card_level":8,
+						"desc":"将5张卡片强化至8星",
+						"require":5,
+					}
+				],
+				"rewards":[
+					{
+						"type":"item",
+						"item_id":"secret_spices",
+						"amount":85
+					},
+					{
+						"type":"gold",
+						"amount":4000
+					}
+				]
+			}
+		)
+		register_task("card_upgrade_7",
+			{
+				"type":"side_task",
+				"title":"增强实力-7",
+				"desc":"只有拥有更高级的卡片才能抵御越来越多的敌人。",
+				"single_game":false,//非单局完成
+				"oneshot":false,//非一命完成
+				"task_unlock":"card_upgrade_8",
+				"requirements":[
+					{
+						"type":"card_upgrade",
+						"target_card_level":9,
+						"desc":"将5张卡片强化至9星",
+						"require":5,
+					}
+				],
+				"rewards":[
+					{
+						"type":"item",
+						"item_id":"secret_spices",
+						"amount":90
+					},
+					{
+						"type":"gold",
+						"amount":4500
+					}
+				]
+			}
+		)
+		register_task("card_upgrade_8",
+			{
+				"type":"side_task",
+				"title":"增强实力-8",
+				"desc":"只有拥有更高级的卡片才能抵御越来越多的敌人。",
+				"single_game":false,//非单局完成
+				"oneshot":false,//非一命完成
+				"task_unlock":"card_upgrade_9",
+				"requirements":[
+					{
+						"type":"card_upgrade",
+						"target_card_level":10,
+						"desc":"将8张卡片强化至10星",
+						"require":8,
+					}
+				],
+				"rewards":[
+					{
+						"type":"item",
+						"item_id":"secret_spices",
+						"amount":100
+					},
+					{
+						"type":"gold",
+						"amount":6000
+					}
+				]
+			}
+		)
+		register_task("card_upgrade_9",
+			{
+				"type":"side_task",
+				"title":"增强实力-9",
+				"desc":"只有拥有更高级的卡片才能抵御越来越多的敌人。",
+				"single_game":false,//非单局完成
+				"oneshot":false,//非一命完成
+				"task_unlock":"card_upgrade_10",
+				"requirements":[
+					{
+						"type":"card_upgrade",
+						"target_card_level":20,
+						"desc":"请等待后续开放更高星级",
+						"require":8,
+					}
+				],
+				"rewards":[
+					{
+						"type":"item",
+						"item_id":"secret_spices",
+						"amount":100
+					},
+					{
+						"type":"gold",
+						"amount":6000
 					}
 				]
 			}
@@ -945,7 +1061,7 @@ function task_init(){
 					{
 						"type":"item",
 						"item_id":"middle_crystal",
-						"amount":10
+						"amount":25
 					},
 					{
 						"type":"gold",
@@ -957,7 +1073,7 @@ function task_init(){
 		register_task("flame_save_4",
 			{
 				"type":"challenge_task",
-				"title":"芝士城堡节约之旅",
+				"title":"玛朵奇港节约之旅",
 				"desc":"冒险途中突发状况很多，需要积攒火苗才能及时应对。",
 				"single_game":true,//仅限单局游戏内完成
 				"oneshot":false,//非一命任务
@@ -966,13 +1082,13 @@ function task_init(){
 					{
 						"type":"level_complete",
 						"target_level":"madoki_port",
-						"desc":"通关一次芝士城堡",
+						"desc":"通关一次玛朵奇港",
 						"require":1,
 					},
 					{
 						"type":"flame_left",
-						"desc":"关卡结算时，剩余5000以上的火苗",
-						"require":5000,
+						"desc":"关卡结算时，剩余5500以上的火苗",
+						"require":5500,
 					},
 				],
 				"rewards":[
@@ -1112,21 +1228,21 @@ function task_init(){
 						"require":0,
 					},
 					{
-						"type":"card_loss",
-						"desc":"不得损失超过60张卡片",
-						"require":60,
+						"type":"time_limit",
+						"desc":"通关时间不超过600秒",
+						"require":600,
 					},
 				],
 				"rewards":[
 					{
 						"type":"item",
 						"item_id":"secret_spices",
-						"amount":80
+						"amount":150
 					},
 					{
 						"type":"item",
 						"item_id":"middle_crystal",
-						"amount":20
+						"amount":50
 					},
 					{
 						"type":"gold",
@@ -1135,7 +1251,7 @@ function task_init(){
 					{
 						"type":"item",
 						"item_id":"clover_1",
-						"amount":2
+						"amount":5
 					},
 				]
 			}
@@ -1161,9 +1277,9 @@ function task_init(){
 						"require":0,
 					},
 					{
-						"type":"card_loss",
-						"desc":"不得损失超过60张卡片",
-						"require":60,
+						"type":"time_limit",
+						"desc":"通关时间不超过540秒",
+						"require":540,
 					},
 				],
 				"rewards":[
@@ -1310,7 +1426,7 @@ function task_init(){
 					{
 						"type":"item",
 						"item_id":"secret_spices",
-						"amount":80
+						"amount":120
 					},
 					{
 						"type":"gold",
@@ -1319,7 +1435,7 @@ function task_init(){
 					{
 						"type":"item",
 						"item_id":"middle_crystal",
-						"amount":10
+						"amount":50
 					},
 					{
 						"type":"item",
