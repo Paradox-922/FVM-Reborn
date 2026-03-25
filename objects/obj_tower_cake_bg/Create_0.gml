@@ -1,5 +1,5 @@
-image_xscale = 1.8
-image_yscale = 1.8
+image_xscale = 0.9
+image_yscale = 0.9
 image_speed = 0
 
 instance_create_depth(x+810,y-472,depth-1,obj_closetowercake_btn)

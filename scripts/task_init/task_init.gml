@@ -1073,7 +1073,7 @@ function task_init(){
 		register_task("flame_save_4",
 			{
 				"type":"challenge_task",
-				"title":"玛朵奇港节约之旅",
+				"title":"玛奇朵港节约之旅",
 				"desc":"冒险途中突发状况很多，需要积攒火苗才能及时应对。",
 				"single_game":true,//仅限单局游戏内完成
 				"oneshot":false,//非一命任务
@@ -1081,8 +1081,8 @@ function task_init(){
 				"requirements":[
 					{
 						"type":"level_complete",
-						"target_level":"madoki_port",
-						"desc":"通关一次玛朵奇港",
+						"target_level":"macchiato_port",
+						"desc":"通关一次玛奇朵港",
 						"require":1,
 					},
 					{
@@ -1267,8 +1267,8 @@ function task_init(){
 				"requirements":[
 					{
 						"type":"level_complete",
-						"target_level":"madoki_port",
-						"desc":"通关一次玛朵奇港",
+						"target_level":"macchiato_port",
+						"desc":"通关一次玛奇朵港",
 						"require":1,
 					},
 					{
@@ -1456,8 +1456,8 @@ function task_init(){
 				"requirements":[
 					{
 						"type":"level_complete",
-						"target_level":"madoki_port",
-						"desc":"通关一次玛朵奇港",
+						"target_level":"macchiato_port",
+						"desc":"通关一次玛奇朵港",
 						"require":1,
 					},
 					{

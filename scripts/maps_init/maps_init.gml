@@ -14,6 +14,7 @@ function maps_init(){
 																										{"id":"curry_island_daytime","name":"咖喱岛（日）","button_spr":spr_levelselect_button,"button_index":11,"button_x":455,"button_y":255,"level_file":"curry_island_daytime.json","hard_level_file":"curry_island_daytime_hard.json","level_sprite":spr_curry_island_daytime,"pre_music":mus_delicious_island_daytime_pre,"elite_music":mus_delicious_island_daytime_elite,"boss_music":mus_delicious_island_daytime_boss,"player_level_require":13,"pre_level_require":[]},
 																										{"id":"curry_island_night","name":"咖喱岛（夜）","button_spr":spr_levelselect_button,"button_index":12,"button_x":578,"button_y":215,"level_file":"curry_island_night.json","hard_level_file":"curry_island_night_hard.json","level_sprite":spr_curry_island_night,"pre_music":mus_delicious_island_night_pre,"elite_music":mus_delicious_island_night_elite,"boss_music":mus_delicious_island_night_boss,"player_level_require":14,"pre_level_require":[]},
 																										{"id":"abyss","name":"深渊岛","button_spr":spr_levelselect_button,"button_index":13,"button_x":750,"button_y":135,"level_file":"abyss.json","hard_level_file":"abyss_hard.json","level_sprite":spr_abyss,"pre_music":mus_delicious_island_crown_pre,"elite_music":mus_delicious_island_crown_elite,"boss_music":mus_delicious_island_daytime_boss,"player_level_require":15,"pre_level_require":[]},
+																										{"id":"tower_cake","name":"深渊岛","button_spr":spr_levelselect_button,"button_index":14,"button_x":1075,"button_y":510,"level_file":"abyss.json","hard_level_file":"abyss_hard.json","level_sprite":spr_abyss,"pre_music":mus_delicious_island_crown_pre,"elite_music":mus_delicious_island_crown_elite,"boss_music":mus_delicious_island_daytime_boss,"player_level_require":8,"pre_level_require":[]},
 	]})
 	
 	register_map(
@@ -283,6 +284,22 @@ function maps_init(){
 					"elite_music":mus_volcanic_island_crown_elite,
 					"boss_music":mus_volcanic_island_night_boss,
 					"player_level_require":25,
+					"pre_level_require":[]
+				},
+				{
+					"id":"tower_cake",
+					"name":"芝士城堡",
+					"button_spr":spr_levelselect_button,
+					"button_index":14,
+					"button_x":1120,
+					"button_y":125,
+					"level_file":"volcanic/cheese_castle.json",
+					"hard_level_file":"volcanic/cheese_castle_hard.json",
+					"level_sprite":spr_cheese_castle,
+					"pre_music":mus_volcanic_island_crown_pre,
+					"elite_music":mus_volcanic_island_crown_elite,
+					"boss_music":mus_volcanic_island_night_boss,
+					"player_level_require":8,
 					"pre_level_require":[]
 				},
 																										

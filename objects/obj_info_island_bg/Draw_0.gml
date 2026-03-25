@@ -313,8 +313,12 @@ else if info_button_select == 3 {
             var card_y = y - 435 + row * 142*1.5-y_offset;
             
             // 绘制敌人
-				
-            draw_sprite_ext(enemy_data.icon, enemy_index, card_x, card_y, 1, 1, 0, c_white, 1);
+			if struct_exists(enemy_data,"spr_index"){
+				draw_sprite_ext(enemy_data.icon, enemy_data.spr_index, card_x, card_y, 0.2, 0.2, 0, c_white, 1);
+			}
+			else{
+				draw_sprite_ext(enemy_data.icon, enemy_index, card_x, card_y, 0.2, 0.2, 0, c_white, 1);
+			}
 			draw_set_color(c_white);
 			draw_set_halign(fa_center);
 			draw_set_valign(fa_middle);
