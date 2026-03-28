@@ -59,7 +59,7 @@ if global.level_data.name == "深渊岛" || global.level_data.name == "可可岛
 	}
 }
 
-if global.level_id == "mustard_cottage_daytime" && event_timer == 1{
+if (global.level_id == "mustard_cottage_daytime" || global.level_id == "tower_cake_7_1" || global.level_id == "tower_cake_7_2" || global.level_id == "tower_cake_8_1" || global.level_id == "tower_cake_8_2") && event_timer == 1{
 	var obs_pos = get_world_position_from_grid(6,5)
 	var inst = instance_create_depth(obs_pos.x,obs_pos.y-35,-1200,obj_obstacle)
 	inst.row = 5
@@ -69,7 +69,7 @@ if global.level_id == "mustard_cottage_night" && event_timer == 1{
 	var inst = instance_create_depth(obs_pos.x,obs_pos.y-35,-1200,obj_obstacle)
 	inst.row = 1
 }
-if global.level_id == "cheese_castle" && event_timer == 1{
+if (global.level_id == "cheese_castle" || global.level_id == "tower_cake_9_1" || global.level_id == "tower_cake_9_2") && event_timer == 1{
 	var obs_pos = get_world_position_from_grid(6,1)
 	var inst = instance_create_depth(obs_pos.x,obs_pos.y-35,-1200,obj_obstacle)
 	inst.row = 1
@@ -121,7 +121,8 @@ if global.level_id == "cheese_castle" && obj_battle.current_wave >= 2 && obj_bat
 	}
 }
 
-if global.level_id == "cheese_castle" && obj_battle.current_wave == 6 && obj_battle.current_subwave == 0{
+if (global.level_id == "cheese_castle" && obj_battle.current_wave == 6 && obj_battle.current_subwave == 0)
+|| ((global.level_id == "tower_cake_9_1" || global.level_id == "tower_cake_9_2") && obj_battle.current_wave == 1 && obj_battle.current_subwave == 1){
 	cheese_castle_anim_timer++
 	if cheese_castle_anim_timer == 1{
 		var inst = instance_create_depth(0,0,49,obj_map_change_effect)
@@ -159,7 +160,8 @@ if global.level_id == "cheese_castle" && obj_battle.current_wave == 6 && obj_bat
 	}
 }
 
-if global.level_id == "cheese_castle" && obj_battle.current_wave == 5 && obj_battle.current_subwave == 9 && obj_battle.wave_timer == 1{
+if (global.level_id == "cheese_castle" && obj_battle.current_wave == 5 && obj_battle.current_subwave == 9 && obj_battle.wave_timer == 1)
+||((global.level_id == "tower_cake_9_1" || global.level_id == "tower_cake_9_2") && obj_battle.current_wave == 1 && obj_battle.current_subwave == 0 && obj_battle.wave_timer == 1){
 	for(var i = 0 ; i < 7 ; i ++){
 		global.row_feature[i] = "land"
 	}

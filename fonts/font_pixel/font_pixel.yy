@@ -4185,8 +4185,8 @@
   "size":12.0,
   "styleName":"Regular",
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"UI",
+    "path":"texturegroups/UI",
   },
   "TTFName":"",
   "usesSDF":false,
