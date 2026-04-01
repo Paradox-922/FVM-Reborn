@@ -240,4 +240,9 @@ function slots_init(){
 	    {"shape":1, "sprite":spr_whisky_bomb_1, "cost":175, "cooldown":50*60, "description":"水晶威士忌炸弹：一列范围爆炸","plant_type":"normal","feature_type":"normal","target_card":"none"},
 		{"shape":2, "sprite":spr_whisky_bomb_2, "cost":225, "cooldown":50*60, "description":"钻石威士忌炸弹：三列范围爆炸","plant_type":"normal","feature_type":"normal","target_card":"none"}
 	])
+	register_card("cotton_candy",obj_cotton_candy,[
+	    {"shape":0, "sprite":spr_cotton_candy_0_0, "cost":25, "cooldown":10*60, "description":"棉花糖：在空中和岩浆上承载卡片","plant_type":"coffee","feature_type":"normal","target_card":"none"},
+	    {"shape":1, "sprite":spr_cotton_candy_1_0, "cost":0, "cooldown":10*60, "description":"草莓棉花糖：在空中和岩浆上承载卡片","plant_type":"coffee","feature_type":"normal","target_card":"none"},
+		{"shape":2, "sprite":spr_cotton_candy_2_0, "cost":0, "cooldown":10*60, "description":"彩虹棉花糖：在空中和岩浆上承载卡片","plant_type":"coffee","feature_type":"normal","target_card":"none"}
+	])
 }

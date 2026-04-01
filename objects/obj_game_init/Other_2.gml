@@ -86,6 +86,7 @@ load_file(global.save_slot)
 	unlock_card("triple_ice_long_bao",12,0,7)
 	unlock_card("whisky_bomb",12,2,7)
 	unlock_card("oden_pot",12,2,7)
+	unlock_card("cotton_candy",12,2,7)
 	
 	global.save_data.player.gold = 20000000
 	global.save_data.player.level = 30
@@ -146,5 +147,9 @@ if global.debug{
 //	global.save_data.unlocked_items.max_slot = 21
 //	global.save_data.unlocked_items.shovel = "gold"
 }
+
+texture_prefetch("UI")
+texture_prefetch("player")
+texture_prefetch("maps")
 
 room_goto(room_menu)

@@ -53,4 +53,5 @@ function skill_init(){
 	register_card_skill("triple_ice_long_bao","cycle",[1.3*60,1.25*60,1.2*60,1.15*60,1.1*60,1.05*60,1*60,0.95*60,0.9*60])
 	register_card_skill("whisky_bomb","atk",[900,950,1000,1050,1100,1150,1200,1250,1300])
 	register_card_skill("oden_pot","cycle",[1.3*60,1.25*60,1.2*60,1.15*60,1.1*60,1.05*60,1*60,0.95*60,0.9*60])
+	register_card_skill("cotton_candy","cooldown",[10*60,9.5*60,9*60,8.5*60,8*60,7*60,6*60,5*60,4*60])
 }
