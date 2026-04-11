@@ -29,6 +29,9 @@ function can_target_on(card_target_type,enemy_target_type){
 			return true
 		}
 	}
+	if card_target_type == "all"{
+		return true
+	}
 	return false
 }
 

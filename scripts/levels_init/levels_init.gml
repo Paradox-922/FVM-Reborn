@@ -17,7 +17,7 @@ function level_info_island_init(){
 	register_level_info_island("mustard_cottage_daytime",{"name":"芥末小屋（日）","icon":spr_levelselect_button_volcanic,"spr":spr_mustard_cottage_daytime,"description":"欢迎来到火山岛的首个关卡！\n全图水域，番茄障碍会阻挡直射子弹，因此那一路需要放置投手。","spr_index":0})
 	register_level_info_island("mustard_cottage_night",{"name":"芥末小屋（夜）","icon":spr_levelselect_button_volcanic,"spr":spr_mustard_cottage_night,"description":"粉红保罗的破坏性较低，一定要抓住吐海星的机会输出。\nTip：钢丝球能对BOSS和防爆敌人造成伤害哦。","spr_index":1})
 	register_level_info_island("mint_beach_daytime",{"name":"薄荷海滩（日）","icon":spr_levelselect_button_volcanic,"spr":spr_mint_beach_daytime,"description":"障碍物更多了！\n在大量放置投手的同时，也不要忘记使用猫猫箱对付罐头鼠。","spr_index":2})
-	register_level_info_island("mint_beach_night",{"name":"薄荷海滩（日）","icon":spr_levelselect_button_volcanic,"spr":spr_mint_beach_night,"description":"金发玛丽的破坏能力较强，需要快速补阵。\n催眠时可以使用冰桶来控住鼠军，防止崩盘。","spr_index":3})
+	register_level_info_island("mint_beach_night",{"name":"薄荷海滩（夜）","icon":spr_levelselect_button_volcanic,"spr":spr_mint_beach_night,"description":"金发玛丽的破坏能力较强，需要快速补阵。\n催眠时可以使用冰桶来控住鼠军，防止崩盘。","spr_index":3})
 	register_level_info_island("cheese_castle",{"name":"芝士城堡","icon":spr_levelselect_button_volcanic,"spr":spr_cheese_castle,"description":"前半段为全水图，后半段为陆地。\n钢爪皮特的破坏能力很强，需要前期攒火。","spr_index":4})
 	register_level_info_island("charcoal_jungle_daytime",{"name":"炭烧雨林（日）","icon":spr_levelselect_button_volcanic,"spr":spr_charcoal_jungle_daytime,"description":"炭烧雨林障碍物较多，适合使用投手。\n使用油灯照亮幽灵鼠，留意魔术师鼠的偷袭。","spr_index":5})
 	register_level_info_island("charcoal_jungle_night",{"name":"炭烧雨林（夜）","icon":spr_levelselect_button_volcanic,"spr":spr_charcoal_jungle_night,"description":"地狱屎者的权杖会持续吸收火苗，需要及时处理，便便可以使用炸弹快速处\n理。","spr_index":6})

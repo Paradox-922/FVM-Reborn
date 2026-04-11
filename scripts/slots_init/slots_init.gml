@@ -74,9 +74,9 @@ function slots_init(){
 		{"shape":2, "sprite":spr_ice_bucket_bomb_2, "cost":75, "cooldown":50*60, "description":"杂果冰桶炸弹：冰冻并伤害全屏敌人，3*4范围冰爆，白天睡觉","plant_type":"normal","feature_type":"normal","target_card":"none"}
 	])
 	register_card("stinky_tofu_pult", obj_stinky_tofu_pult, [
-	    {"shape":0, "sprite":spr_stinky_tofu_pult, "cost":175, "cooldown":7*60, "description":"臭豆腐投手：投掷能产生毒雾的豆腐","plant_type":"normal","feature_type":"normal","target_card":"none"},
-	    {"shape":1, "sprite":spr_stinky_tofu_pult_1, "cost":175, "cooldown":7*60, "description":"什锦臭豆腐投手：投掷能产生毒雾的豆腐","plant_type":"normal","feature_type":"normal","target_card":"none"},
-		{"shape":2, "sprite":spr_stinky_tofu_pult_2, "cost":175, "cooldown":7*60, "description":"铁板臭豆腐投手：投掷两块能产生毒雾的豆腐","plant_type":"normal","feature_type":"normal","target_card":"none"}
+	    {"shape":0, "sprite":spr_stinky_tofu_pult, "cost":150, "cooldown":7*60, "description":"臭豆腐投手：投掷能产生毒雾的豆腐","plant_type":"normal","feature_type":"normal","target_card":"none"},
+	    {"shape":1, "sprite":spr_stinky_tofu_pult_1, "cost":150, "cooldown":7*60, "description":"什锦臭豆腐投手：投掷能产生毒雾的豆腐","plant_type":"normal","feature_type":"normal","target_card":"none"},
+		{"shape":2, "sprite":spr_stinky_tofu_pult_2, "cost":150, "cooldown":7*60, "description":"铁板臭豆腐投手：投掷两块能产生毒雾的豆腐","plant_type":"normal","feature_type":"normal","target_card":"none"}
 	]);
 	register_card("cat_box",obj_cat_box,[
 	    {"shape":0, "sprite":spr_cat_box_1, "cost":100, "cooldown":7*60, "description":"猫猫盒：将老鼠惊吓至相邻行","plant_type":"normal","feature_type":"normal","target_card":"none"}
@@ -245,4 +245,15 @@ function slots_init(){
 	    {"shape":1, "sprite":spr_cotton_candy_1_0, "cost":0, "cooldown":10*60, "description":"草莓棉花糖：在空中和岩浆上承载卡片","plant_type":"coffee","feature_type":"normal","target_card":"none"},
 		{"shape":2, "sprite":spr_cotton_candy_2_0, "cost":0, "cooldown":10*60, "description":"彩虹棉花糖：在空中和岩浆上承载卡片","plant_type":"coffee","feature_type":"normal","target_card":"none"}
 	])
+	register_card("durian",obj_durian,[
+	    {"shape":0, "sprite":spr_durian, "cost":375, "cooldown":90*60, "description":"榴莲：伤害3*3范围敌人","plant_type":"normal","feature_type":"normal","target_card":"none"},
+	    {"shape":1, "sprite":spr_durian_1, "cost":375, "cooldown":90*60, "description":"雪山榴莲：伤害并减速3*3范围敌人","plant_type":"normal","feature_type":"normal","target_card":"none"},
+		{"shape":2, "sprite":spr_durian_2, "cost":375, "cooldown":90*60, "description":"冰河世纪榴莲：伤害并减速5*5范围敌人","plant_type":"normal","feature_type":"normal","target_card":"none"}
+	])
+	register_card("dragon_fruit",obj_dragon_fruit,[
+	    {"shape":0, "sprite":spr_dragon_fruit, "cost":375, "cooldown":60*60, "description":"火龙果：灼烧3*3范围敌人","plant_type":"normal","feature_type":"normal","target_card":"none"},
+	    {"shape":1, "sprite":spr_dragon_fruit_1, "cost":375, "cooldown":60*60, "description":"炎阳火龙果：灼烧3*3范围敌人","plant_type":"normal","feature_type":"normal","target_card":"none"},
+		{"shape":2, "sprite":spr_dragon_fruit_2, "cost":375, "cooldown":60*60, "description":"九天皓日火龙果：灼烧5*5范围敌人","plant_type":"normal","feature_type":"normal","target_card":"none"}
+	])
+	
 }
