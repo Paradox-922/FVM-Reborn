@@ -133,7 +133,7 @@ if global.level_id == "charcoal_jungle_night" && event_timer == 1{
 	var inst5 = instance_create_depth(obs_pos5.x,obs_pos5.y-35,-1200,obj_obstacle)
 	inst5.row = 6
 }
-if global.level_id == "macchiato_port" && event_timer == 1{
+if (global.level_id == "macchiato_port" || global.level_id == "tower_cake_12_1" || global.level_id == "tower_cake_12_2") && event_timer == 1{
 	var obs_pos = get_world_position_from_grid(8,1)
 	var inst = instance_create_depth(obs_pos.x+5,obs_pos.y-35,-1200,obj_wind_tunnel)
 	inst.row = 1
