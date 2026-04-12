@@ -12,3 +12,16 @@ else{
 }
 
 depth = calculate_plant_depth(grid_col,grid_row,"lilypad")
+
+with obj_cloud{
+	if is_hole && col > 1 &&
+	((other.shape <= 1 && row == other.grid_row && abs(col - other.grid_col) <= 1)||
+	(other.shape >= 2 && abs(col - other.grid_col) <= 1 && abs(col - other.grid_col) <= 1)){
+		is_hole = false
+		image_alpha = 1
+		other.hole_count --
+	}
+}
+if hole_count <= 0{
+	instance_destroy()
+}
