@@ -35,3 +35,6 @@ if !on_lava{
 		}
 	}
 }
+if on_lava{
+	plant_type = "lilypad"
+}

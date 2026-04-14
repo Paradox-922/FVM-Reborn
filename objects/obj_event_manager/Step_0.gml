@@ -155,6 +155,75 @@ if (global.level_id == "macchiato_port" || global.level_id == "tower_cake_15_1" 
 	var inst5 = instance_create_depth(obs_pos5.x,obs_pos5.y-35,-1200,obj_wind_tunnel)
 	inst5.row = 4
 }
+if global.level_id == "jam_tribe_daytime" && event_timer == 1{
+	var lava_pos_list = [
+	[0,0,0,0,1,1,1,0,0],
+	[0,0,0,0,1,0,1,0,0],
+	[0,0,0,0,1,1,1,0,0],
+	[0,0,0,1,1,1,0,0,0],
+	[0,0,0,1,1,1,0,0,0],
+	[0,0,0,1,0,1,0,0,0],
+	[0,0,0,1,1,1,0,0,0]
+	]
+	for(var i = 0 ; i < array_length(lava_pos_list) ; i++){
+		for(var j = 0 ; j < array_length(lava_pos_list[i]) ; j++){
+			
+			if lava_pos_list[i][j] == 1{ 
+				var obs_pos = get_world_position_from_grid(j,i)
+				var inst = instance_create_depth(obs_pos.x,obs_pos.y-35,-1200,obj_lava)
+				inst.row = i
+				inst.col = j
+				inst.depth = calculate_plant_depth(j,i,"coffee")
+			}
+		}
+	}
+}
+if global.level_id == "jam_tribe_night" && event_timer == 1{
+	var lava_pos_list = [
+	[0,0,0,0,0,1,1,0,0],
+	[0,0,0,0,0,0,1,0,0],
+	[0,0,0,0,0,1,1,0,0],
+	[0,0,0,0,1,1,0,0,0],
+	[0,0,0,0,1,1,0,0,0],
+	[0,0,0,0,0,1,0,0,0],
+	[0,0,0,0,1,1,0,0,0]
+	]
+	for(var i = 0 ; i < array_length(lava_pos_list) ; i++){
+		for(var j = 0 ; j < array_length(lava_pos_list[i]) ; j++){
+			
+			if lava_pos_list[i][j] == 1{ 
+				var obs_pos = get_world_position_from_grid(j,i)
+				var inst = instance_create_depth(obs_pos.x,obs_pos.y-35,-1200,obj_lava)
+				inst.row = i
+				inst.col = j
+				inst.depth = calculate_plant_depth(j,i,"coffee")
+			}
+		}
+	}
+}
+if global.level_id == "snowcap_volcano" && event_timer == 1{
+	var lava_pos_list = [
+	[0,0,0,0,1,1,0,0,1],
+	[0,0,0,0,0,0,0,0,1],
+	[0,0,1,1,0,0,0,1,1],
+	[0,0,0,0,0,0,0,0,0],
+	[0,0,1,1,0,0,0,0,0],
+	[0,0,0,1,0,1,0,0,1],
+	[0,0,0,0,0,0,0,0,1]
+	]
+	for(var i = 0 ; i < array_length(lava_pos_list) ; i++){
+		for(var j = 0 ; j < array_length(lava_pos_list[i]) ; j++){
+			
+			if lava_pos_list[i][j] == 1{ 
+				var obs_pos = get_world_position_from_grid(j,i)
+				var inst = instance_create_depth(obs_pos.x,obs_pos.y-35,-1200,obj_lava)
+				inst.row = i
+				inst.col = j
+				inst.depth = calculate_plant_depth(j,i,"coffee")
+			}
+		}
+	}
+}
 
 if (global.level_id == "mustard_cottage_daytime" || global.level_id == "mustard_cottage_night") && obj_battle.current_wave >= global.level_file.elite_wave && obj_battle.level_stage != "boss"{
 	if event_timer mod 1800 == 5{

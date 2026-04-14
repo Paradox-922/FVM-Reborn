@@ -31,6 +31,7 @@ if (hp <= 0 && state != BOSS_STATE.DEATH) {
 	global.save_data.player.gold += 3000
     timer = 0;
     state = BOSS_STATE.DEATH;
+	image_alpha = 1
     target_plant = noone;  // 清除攻击目标
 	with obj_battle{
 		if boss_count <= 1 && current_wave >= total_wave - 1{
@@ -86,19 +87,16 @@ switch state{
 				state = BOSS_STATE.SKILL1
 			}
 			else if skill_count == 1{
-				state = BOSS_STATE.SKILL4
-			}
-			else if skill_count == 2{
 				state = BOSS_STATE.SKILL2
 			}
-			else if skill_count == 3{
+			else if skill_count == 2{
 				state = BOSS_STATE.SKILL3
 			}
-			else if skill_count == 4{
+			else if skill_count == 3{
 				state = BOSS_STATE.SKILL4
 			}
 			skill_count ++
-			if skill_count >= 5{
+			if skill_count >= 4{
 				skill_count = 0
 			}
 			break
