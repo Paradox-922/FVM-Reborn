@@ -1,0 +1,142 @@
+/// 
+
+#macro kCustomStageFolder "laboratory"
+
+enum MouseStatus {
+    NONE = 0,
+    HOVER = 1,
+    PRESS = 2,
+    RELEASE = 3,
+}
+
+enum ErrorCode {
+    NO_SUCH_FILE = 0x1001,
+    NO_SUCH_RESOURCE = 0x1002,
+    LOAD_RESOURCE_FAILED = 0x1003,
+    JSON_PARSE_FAILED = 0x1004,
+    CREATE_FILE_FAILED = 0x1005,
+    
+    // mod_loader
+    INVALID_METADATA = 0x2001,
+    LOAD_LUA_FAILED = 0x2002,
+    CALL_LUA_FAILED = 0x2003,
+    GET_LUA_VARIABLE_FAILED = 0x2004,
+    SET_LUA_VARIABLE_FAILED = 0x2005,
+    GET_LUA_FUNCTION_FAILED = 0x2006,
+    SET_LUA_FUNCTION_FAILED = 0x2007,
+    GET_LUA_PROPERTY_FAILED = 0x2008,
+    INVALID_TYPE = 0x2009,
+}
+
+function Result() constructor {
+    self.code = 0
+    self.message = ""
+    /// @type {Any|Undefined} 
+    self.data = undefined
+    /// @type {Array<Enum.ErrorCode>} 
+    self.code_stack = []
+    /// @type {Array<String>} 
+    self.message_stack = []
+
+    /// @returns {Bool} 
+    static is_succeed = function() {
+        return self.code == 0
+    }
+
+    /// @returns {Bool} 
+    static is_failed = function() {
+        return self.code != 0
+    }
+
+    /// @template {T}  
+    /// @param {T|Undefined} _data 
+    /// @returns {Struct.Result} 
+    static success = function(_data = undefined) {
+        var _result = new Result()
+        _result.code = 0
+        _result.data = _data
+        return _result
+    }
+
+    /// @param {Enum.ErrorCode} _code 
+    /// @param {String} _message 
+    /// @returns {Struct.Result} 
+    static fail = function(_code, _message) {
+        var _result = new Result()
+        _result.code = _code
+        _result.message = _message
+        return _result
+    }
+
+    /// @param {Enum.ErrorCode} _code 
+    /// @param {String} _message 
+    /// @returns {Struct.Result} 
+    static wrap = function(_code, _message) {
+        array_push(self.code_stack, _code)
+        array_push(self.message_stack, _message)
+        return self
+    }
+
+    /// @returns {String} 
+    static get_error_stack = function() {
+        var _stack = ""
+        for (var i = array_length(self.code_stack) - 1; i >= 0; i--) {
+            _stack += "Code: " + string(self.code_stack[i]) + ", Message: " + self.message_stack[i] + "\n"
+        }
+        _stack += "Final Code: " + string(self.code) + ", Final Message: " + self.message + "\n"
+        return _stack
+    }
+}
+
+function CustomStage() constructor {
+    self.name = ""
+    self.author = ""
+    self.version = ""
+    self.id = ""
+    self.description = ""
+    self.total_waves = 0
+    self.prepare_time = 0
+    self.star_limit = 0
+    self.time_limit = 0
+    self.allow_pet = true
+    self.allow_equipment = true
+    self.initial_energy = 0
+    self.mouse_level = 0 
+    /// @type {Asset.GMSprite} 
+    self.map_sprite = -1
+    self.pre_music = ""
+    self.elite_music = ""
+    self.boss_music = ""
+
+    self.json_path = ""
+
+
+}
+
+/// @param {Struct} _json 
+/// @param {String} _json_path
+/// @returns {Struct.CustomStage} 
+function create_custom_stage(_json, _json_path) {
+    var _stage = new CustomStage()
+    _stage.name = variable_struct_get(_json,"name")
+    _stage.author = variable_struct_get(_json,"author")
+    _stage.version = variable_struct_get(_json,"version")
+    _stage.id = _json_path
+    _stage.description = variable_struct_get(_json,"desc")
+    _stage.total_waves = variable_struct_get(_json,"total_waves")
+    _stage.prepare_time = variable_struct_get(_json,"first_wave_delay")
+    _stage.star_limit = 16
+    _stage.time_limit = variable_struct_get(_json,"time_limit")   
+    _stage.allow_pet = true
+    _stage.allow_equipment = true
+    _stage.initial_energy = variable_struct_get(_json,"starting_flame")
+    _stage.mouse_level = variable_struct_get(_json,"hp_modify")
+    
+    _stage.json_path = _json_path
+
+    var _sprite = variable_struct_get(_json,"map_sprite")
+    if (_sprite != undefined) {
+        _stage.map_sprite = (asset_get_index(_sprite))
+    }
+    return _stage
+}
