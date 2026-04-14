@@ -1,0 +1,407 @@
+{
+    "version": 1.3999999999999999,
+    "level_name": "new_level",
+    "level_time_feature": "daytime",
+    "map_sprite": "new_level_sprite",
+    "display_name": "新关卡",
+    "author": "you",
+    "desc": "这是一个什么都没有的新关卡",
+    "pre_music": "delicious_island_daytime_pre",
+    "elite_music": "delicious_island_daytime_elite",
+    "boss_music": "delicious_island_daytime_boss",
+    "time_limit": 0.0,
+    "map_cols": 9.0,
+    "map_rows": 7.0,
+    "starting_flame": 50.0,
+    "first_wave_delay": 30.0,
+    "total_waves": 4.0,
+    "elite_wave": 2.0,
+    "boss_wave": 4.0,
+    "hp_modify": 1.0,
+    "min_wave_time": 240.0,
+    "max_wave_time": 1500.0,
+    "map": [
+        [
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            }
+        ],
+        [
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            }
+        ],
+        [
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            }
+        ],
+        [
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            }
+        ],
+        [
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            }
+        ],
+        [
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            }
+        ],
+        [
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            },
+            {
+                "plant": [],
+                "object": [],
+                "type": "normal"
+            }
+        ]
+    ],
+    "waves": [
+        {
+            "boss_1_hp_modify": 1.0,
+            "subwaves": [],
+            "boss2": "",
+            "boss_2_hp_modify": 1.0,
+            "boss_wave": false,
+            "wave_index": 1.0,
+            "boss": ""
+        },
+        {
+            "boss_1_hp_modify": 1.0,
+            "subwaves": [],
+            "boss2": "",
+            "boss_2_hp_modify": 1.0,
+            "boss_wave": false,
+            "wave_index": 2.0,
+            "boss": ""
+        },
+        {
+            "boss_1_hp_modify": 1.0,
+            "subwaves": [],
+            "boss2": "",
+            "boss_2_hp_modify": 1.0,
+            "boss_wave": false,
+            "wave_index": 3.0,
+            "boss": ""
+        },
+        {
+            "boss_1_hp_modify": 1.0,
+            "subwaves": [],
+            "boss2": "",
+            "boss_2_hp_modify": 1.0,
+            "boss_wave": false,
+            "wave_index": 4.0,
+            "boss": ""
+        }
+    ],
+    "rewards": [
+        {
+            "items": [],
+            "gold": 0.0
+        },
+        {
+            "gold": 0.0,
+            "items": [],
+            "card_unlock": [],
+            "weapon_unlock": [],
+            "gem_unlock": [],
+            "player_level": 0.0,
+            "skill_level": 0.0
+        }
+    ]
+} 
