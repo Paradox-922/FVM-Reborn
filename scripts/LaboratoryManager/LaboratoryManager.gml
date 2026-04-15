@@ -40,6 +40,9 @@ function LaboratoryManager() constructor {
 
         var _json = _result.data
         var _stage = create_custom_stage(_json, _json_path)
+        if (_stage.map_sprite == -1) {
+            return new Result().fail(ErrorCode.INVALID_METADATA, "stage " + _stage.json_path + " has no valid map sprite")
+        }
         self._add_stage(_stage.id, _stage)
         array_push(self.stage_ids, _stage.id)
         return new Result().success()
@@ -48,13 +51,17 @@ function LaboratoryManager() constructor {
 
     /// @returns {Struct.Result} 
     static load_all_stages = function() {
+        var error_message = ""
         var _json_path_list = self.file_util.find_files_with_extension_recursively(kCustomStageFolder, ".json")
         for (var i = 0; i < array_length(_json_path_list); i++) {
             var _json_path = _json_path_list[i]
             var _result = self._load_stage(_json_path)
             if (_result.is_failed()) {
-                return _result
+                error_message += _result.get_error_stack()
             }
+        }
+        if (error_message != "") {
+            return new Result().fail(ErrorCode.INVALID_METADATA, "error occurred while loading stages:\n" + error_message)
         }
         return new Result().success()
     }

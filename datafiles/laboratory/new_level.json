@@ -2,7 +2,7 @@
     "version": 1.3999999999999999,
     "level_name": "new_level",
     "level_time_feature": "daytime",
-    "map_sprite": "new_level_sprite",
+    "map_sprite": "spr_cheese_castle",
     "display_name": "新关卡",
     "author": "you",
     "desc": "这是一个什么都没有的新关卡",

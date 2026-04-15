@@ -84,6 +84,7 @@ function on_draw_gui() {
         self.state.left, self.state.top, 
         self.state.scale, self.state.scale, 
         0, c_white, 1)
+
     if (!is_undefined(self.state.close_button)) {
         self.state.close_button.on_draw_gui()
     }

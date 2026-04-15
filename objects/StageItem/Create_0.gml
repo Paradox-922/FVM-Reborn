@@ -16,6 +16,11 @@ self.state = {
     mouse_status: MouseStatus.NONE,
     /// @type {Array<Enum.GuiEnum>} 
     correspond_gui_enums: [GuiEnum.LABORATORY],
+        
+    map_sprite_left: 16,
+    map_sprite_top: 65,
+    map_sprite_scale: 1,
+    map_sprite_size: 120,
 
 }
 
@@ -43,6 +48,10 @@ function set_auto_draw(_auto_draw) {
 function init(_custom_stage) {
     self.state.custom_stage = _custom_stage
     self.state.initialized = true
+
+    var _map_sprite_original_height = sprite_get_height(_custom_stage.map_sprite)
+    self.state.map_sprite_scale = self.state.map_sprite_size / _map_sprite_original_height
+
     return self
 }
 
@@ -118,6 +127,28 @@ function on_draw_gui() {
     if (is_undefined(self.state.custom_stage)) exit
     
     draw_sprite_ext(spr_stage_item, 0, self.x, self.y, self.state.scale, self.state.scale, 0, c_white, 1)
+
+    var _prev_scissor = gpu_get_scissor()
+    var _sprite_start_x = self.state.left + self.state.map_sprite_left
+    var _sprite_start_y = self.state.top + self.state.map_sprite_top
+    if (!is_undefined(self.state.custom_stage)) {
+        gpu_set_scissor(
+            _sprite_start_x, _sprite_start_y, 
+            self.state.map_sprite_size, self.state.map_sprite_size)
+        draw_sprite_ext(
+            self.state.custom_stage.map_sprite, 0, 
+            _sprite_start_x, _sprite_start_y, 
+            self.state.map_sprite_scale, self.state.map_sprite_scale, 
+            0, c_white, 1
+        )
+        gpu_set_scissor(_prev_scissor)
+
+        draw_text(self.state.left + 140, self.state.top + 18, self.state.custom_stage.author)
+        draw_text(self.state.left + 250, self.state.top + 67, self.state.custom_stage.name)
+        draw_text(self.state.left + 156, self.state.top + 115, self.state.custom_stage.description)
+        
+    }
+
 
 }
 

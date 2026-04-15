@@ -10,11 +10,14 @@ self.state = {
     stage_ids : [],
     current_stage_id: "",
     /// @type {Asset.GMObject.StageDetail} 
-    stage_detail_widget: undefined
+    stage_detail_widget: undefined,
 
+    bottom_button_width: 210,
+    bottom_button_height: 170,
+    bottom_button_scale: 1,
 }
 
-function init_bg_size_and_offset() {
+function init_asset_size_and_offset() {
     var _bg_sprite_width = sprite_get_width(spr_laboratory_bg)
     var _width_scale = room_width / _bg_sprite_width
     var _bg_sprite_height = sprite_get_height(spr_laboratory_bg)
@@ -24,6 +27,9 @@ function init_bg_size_and_offset() {
 
     self.state.offset_x = (room_width - _bg_sprite_width * self.state.bg_scale) / 2
     self.state.offset_y = (room_height - _bg_sprite_height * self.state.bg_scale) / 2
+
+    var _bottom_button_width = sprite_get_width(spr_doctor_shop)
+    self.state.bottom_button_scale = self.state.bottom_button_width / _bottom_button_width
 
 }
 
@@ -62,7 +68,7 @@ function create_ui_elements() {
 }
 
 function on_create() {
-    init_bg_size_and_offset()
+    init_asset_size_and_offset()
 
     if (!variable_global_exists("laboratory_manager") || is_undefined(global.laboratory_manager)) {
         throw("global.laboratory_manager is not defined")
@@ -77,7 +83,7 @@ function on_create() {
     if (array_length(_stage_ids) == 0) {
         var _result = self.state.laboratory_manager.load_all_stages()
         if (_result.is_failed()) {
-            throw(_result.message)
+            show_message_async(_result.message)
         }
         _stage_ids = self.state.laboratory_manager.get_stage_ids()
     }
@@ -113,6 +119,24 @@ function on_draw() {
         self.state.offset_x, self.state.offset_y, 
         self.state.bg_scale, self.state.bg_scale, 
         0, c_white, 1)
+    draw_sprite_ext(
+        spr_doctor_shop, 0,
+        882, 852,
+        self.state.bottom_button_scale, self.state.bottom_button_scale,
+        0, c_white, 1
+    )
+    draw_sprite_ext(
+        spr_my_stages, 0,
+        1180, 843,
+        self.state.bottom_button_scale, self.state.bottom_button_scale,
+        0, c_white, 1
+    )
+    draw_sprite_ext(
+        spr_search_team, 0,
+        1480, 852,
+        self.state.bottom_button_scale, self.state.bottom_button_scale,
+        0, c_white, 1
+    )
 }
 
 on_create()
