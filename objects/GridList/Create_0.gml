@@ -18,6 +18,9 @@ self.state = {
 
     grid_x: 3,
     grid_gap: 10,
+
+    /// @type {Array<Enum.GuiEnum>} 
+    correspond_gui_enums: [GuiEnum.LABORATORY],
 }
 
 /// @description Setup
@@ -75,6 +78,23 @@ function calculate_content_height() {
     var _rows = (_item_count + _gx - 1) div _gx
 
     return _rows * (_height + self.state.grid_gap) - self.state.grid_gap + self.state.padding_top + self.state.padding_bottom 
+}
+
+/// @param {Array<Enum.GuiEnum>} _enums 
+function set_correspond_gui_enums(_enums) {
+    self.state.correspond_gui_enums = _enums
+    return self
+}
+
+function should_correspond() {
+    var _current = global.gui_stack.get_top()
+    if (is_undefined(_current)) {
+        return true
+    }
+    if (array_contains(self.state.correspond_gui_enums, _current)) {
+        return true
+    }
+    return false
 }
 
 function set_items(_items) {
@@ -195,6 +215,9 @@ function apply_wheel() {
 /// @description Begin Step — layout + scroll before child Step
 
 function on_begin_step() {
+    if (!should_correspond()) {
+        exit
+    }
     apply_wheel()
     smooth_scroll_y()
     layout_items()

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"FileUtil",
+  "%Name":"GuiStack",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"FileUtil",
+  "name":"GuiStack",
   "parent":{
     "name":"Util",
     "path":"folders/Util.yy",

@@ -88,6 +88,7 @@ for (var i = 0; i < array_length(global.keybind_config); i++) {
 
 global.laboratory_manager = new LaboratoryManager()
 global.laboratory_manager.init()
+global.gui_stack = new GuiStack()
 
 ini_close();
 audio_group_set_gain(music,global.music_volume,0)

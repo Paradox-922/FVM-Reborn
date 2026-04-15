@@ -11,7 +11,8 @@ self.state = {
     /// @type {function} 
     on_close_clicked: undefined,
     /// @type {Asset.GMObject.CloseButton} 
-    close_button: undefined
+    close_button: undefined,
+
 }
 
 
@@ -45,6 +46,7 @@ function on_close() {
         self.state.on_close_clicked()
         instance_destroy(self.state.close_button)
         self.state.close_button = undefined
+        global.gui_stack.pop()
         instance_destroy()
     }
 }
@@ -60,11 +62,13 @@ function create_widgets() {
     var _close_button = instance_create_layer(0, 0, "Float", CloseButton)
     _close_button.set_on_click(method(self, on_close))
                  .set_auto_draw(false)
+                 .set_correspond_gui_enums([GuiEnum.STAGE_DETAIL])
     self.state.close_button = _close_button
 }
 
 /// @description Events
 function on_create() {
+    global.gui_stack.push(GuiEnum.STAGE_DETAIL)
     self.state.height = sprite_get_height(spr_stage_detail) * self.state.scale
     self.state.width = sprite_get_width(spr_stage_detail) * self.state.scale
     create_widgets()

@@ -31,6 +31,7 @@ function create_ui_elements() {
     /// @type {Asset.GMObject.CloseButton} 
     var _close_button = instance_create_layer(0, 0, "Assets", CloseButton)
     _close_button.set_position(room_width - 200, 30)
+        .set_correspond_gui_enums([GuiEnum.LABORATORY])
         .set_on_click(function() {
             global.menu_screen = true
             room_goto(room_menu)
@@ -66,7 +67,11 @@ function on_create() {
     if (!variable_global_exists("laboratory_manager") || is_undefined(global.laboratory_manager)) {
         throw("global.laboratory_manager is not defined")
     }
-
+    if (!variable_global_exists("gui_stack") || is_undefined(global.gui_stack)) {
+        throw("global.gui_stack is not defined")
+    }
+    
+    global.gui_stack.push(GuiEnum.LABORATORY)
     self.state.laboratory_manager = global.laboratory_manager
     var _stage_ids = self.state.laboratory_manager.get_stage_ids()
     if (array_length(_stage_ids) == 0) {

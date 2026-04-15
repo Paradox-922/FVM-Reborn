@@ -14,6 +14,8 @@ self.state = {
     custom_stage: undefined,
     /// @type {Enum.MouseStatus} 
     mouse_status: MouseStatus.NONE,
+    /// @type {Array<Enum.GuiEnum>} 
+    correspond_gui_enums: [GuiEnum.LABORATORY],
 
 }
 
@@ -43,6 +45,24 @@ function init(_custom_stage) {
     self.state.initialized = true
     return self
 }
+
+/// @param {Array<Enum.GuiEnum>} _enums 
+function set_correspond_gui_enums(_enums) {
+    self.state.correspond_gui_enums = _enums
+    return self
+}
+
+function should_correspond() {
+    var _current = global.gui_stack.get_top()
+    if (is_undefined(_current)) {
+        return true
+    }
+    if (array_contains(self.state.correspond_gui_enums, _current)) {
+        return true
+    }
+    return false
+}
+
 
 /// @param {function} _on_click 
 function set_on_click(_on_click) {
@@ -76,6 +96,9 @@ function on_create() {
 function on_step() {
     if (!self.state.initialized) exit
     if (is_undefined(self.state.custom_stage)) exit
+    if (!should_correspond()) {
+        exit
+    }
 
     update_mouse()
     if (mouse_check_button_pressed(mb_left) && (self.state.mouse_status == MouseStatus.HOVER)) {

@@ -17,6 +17,8 @@ self.state = {
     /// @type {Enum.MouseStatus} 
     mouse_status: MouseStatus.NONE,
     auto_draw: true,
+    /// @type {Array<Enum.GuiEnum>} 
+    correspond_gui_enums: [],
 }
 
 
@@ -47,6 +49,23 @@ function set_on_click(_on_click) {
     return self
 }
 
+/// @param {Array<Enum.GuiEnum>} _enums 
+function set_correspond_gui_enums(_enums) {
+    self.state.correspond_gui_enums = _enums
+    return self
+}
+
+function should_correspond() {
+    var _current = global.gui_stack.get_top()
+    if (is_undefined(_current)) {
+        return true
+    }
+    if (array_contains(self.state.correspond_gui_enums, _current)) {
+        return true
+    }
+    return false
+}
+
 
 function update_mouse() {
     var _mx = device_mouse_x_to_gui(0);
@@ -75,6 +94,9 @@ function on_create() {
 }
 
 function on_step() {
+    if (!should_correspond()) {
+        exit
+    }
     update_mouse()
     if (mouse_check_button_pressed(mb_left) && (self.state.mouse_status == MouseStatus.HOVER)) {
         self.state.mouse_status = MouseStatus.PRESS
