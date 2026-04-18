@@ -154,4 +154,3 @@ function on_draw() {
 }
 
 on_create()
-show_debug_message("laboratory gui created")
