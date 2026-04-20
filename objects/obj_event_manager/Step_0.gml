@@ -155,7 +155,7 @@ if (global.level_id == "macchiato_port" || global.level_id == "tower_cake_15_1" 
 	var inst5 = instance_create_depth(obs_pos5.x,obs_pos5.y-35,-1200,obj_wind_tunnel)
 	inst5.row = 4
 }
-if global.level_id == "jam_tribe_daytime" && event_timer == 1{
+if (global.level_id == "jam_tribe_daytime" || global.level_id == "tower_cake_19_1" || global.level_id == "tower_cake_19_2") && event_timer == 1{
 	var lava_pos_list = [
 	[0,0,0,0,1,1,1,0,0],
 	[0,0,0,0,1,0,1,0,0],
@@ -178,7 +178,7 @@ if global.level_id == "jam_tribe_daytime" && event_timer == 1{
 		}
 	}
 }
-if global.level_id == "jam_tribe_night" && event_timer == 1{
+if (global.level_id == "jam_tribe_night" || global.level_id == "tower_cake_18_1" || global.level_id == "tower_cake_18_2") && event_timer == 1{
 	var lava_pos_list = [
 	[0,0,0,0,0,1,1,0,0],
 	[0,0,0,0,0,0,1,0,0],
@@ -201,7 +201,7 @@ if global.level_id == "jam_tribe_night" && event_timer == 1{
 		}
 	}
 }
-if global.level_id == "snowcap_volcano" && event_timer == 1{
+if (global.level_id == "snowcap_volcano" || global.level_id == "tower_cake_20_1" || global.level_id == "tower_cake_20_2") && event_timer == 1{
 	var lava_pos_list = [
 	[0,0,0,0,1,1,0,0,1],
 	[0,0,0,0,0,0,0,0,1],
@@ -289,7 +289,7 @@ if (global.level_id == "cheese_castle" && obj_battle.current_wave == 5 && obj_ba
 	}
 }
 
-if global.level_id == "cotton_candy_sky_daytime"{
+if global.level_id == "cotton_candy_sky_daytime" || global.level_id == "tower_cake_16_1" || global.level_id == "tower_cake_16_2"{
 	if event_timer mod 1800 == 1799{
 		can_cloud_hole_summon = true
 	}
@@ -323,7 +323,7 @@ if global.level_id == "cotton_candy_sky_daytime"{
 		cloud_count ++
 	}
 }
-if global.level_id == "cotton_candy_sky_night"{
+if global.level_id == "cotton_candy_sky_night" || global.level_id == "tower_cake_17_1" || global.level_id == "tower_cake_17_2"{
 	if event_timer mod 1800 == 1799{
 		can_cloud_hole_summon = true
 	}

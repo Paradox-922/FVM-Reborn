@@ -112,11 +112,13 @@ switch state{
 					}
 				}
 			}
-			var pos_choose = irandom_range(0,ds_list_size(avaliable_pos)-1)
-			var pos_grid = avaliable_pos[| pos_choose]
-			t_pos = get_world_position_from_grid(pos_grid.col,pos_grid.row)
-			y_move_speed = (t_pos.y+33-y)/120
-			x_move = (t_pos.x+80-x)/120
+			if ds_list_size(avaliable_pos) > 0{
+				var pos_choose = irandom_range(0,ds_list_size(avaliable_pos)-1)
+				var pos_grid = avaliable_pos[| pos_choose]
+				t_pos = get_world_position_from_grid(pos_grid.col,pos_grid.row)
+				y_move_speed = (t_pos.y+33-y)/120
+				x_move = (t_pos.x+80-x)/120
+			}
 		}
 		if timer > 1 && timer <= 120{
 			x += x_move
