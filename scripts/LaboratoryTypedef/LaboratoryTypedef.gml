@@ -129,23 +129,29 @@ function CustomStage() constructor {
 
 /// @param {String} _path
 /// @param {String} _path_prefix
-/// @returns {Asset.GMSound}
+/// @returns {Struct.Result<Asset.GMSound>}
 function get_audio_or_create(_path, _path_prefix) {
     if (string_starts_with(_path, "./") || string_starts_with(_path, "../") || string_starts_with(_path, ".\\") || string_starts_with(_path, "..\\")) {
+        if (!string_ends_with(_path, ".ogg")) {
+            return new Result().fail(
+                ErrorCode.INVALID_TYPE, 
+                "Failed to load audio for " + _path_prefix + "; Invalid audio type: " + _path + " should be .ogg")
+        }
 		if (!string_ends_with(_path_prefix, "/") && !string_ends_with(_path_prefix, "\\")) {
 			_path_prefix = _path_prefix + "/"
 		}
         _path_prefix += "../"
-		return global.laboratory_manager.load_dynamic_audio(_path_prefix + _path)
+        var _audio = global.laboratory_manager.load_dynamic_audio(_path_prefix + _path)
+		return new Result().success(_audio)
 	}
 
-    return asset_get_index(_path)
+    return new Result().success(asset_get_index(_path))
 }
 
 
 /// @param {Struct} _json 
 /// @param {String} _json_path
-/// @returns {Struct.CustomStage} 
+/// @returns {Struct.Result<Struct.CustomStage>} 
 function create_custom_stage(_json, _json_path) {
     var _stage = new CustomStage()
     _stage.name = variable_struct_get(_json,"display_name")
@@ -169,15 +175,27 @@ function create_custom_stage(_json, _json_path) {
 
     /// @type {String} 
     var _pre_music_path = variable_struct_get(_json,"pre_music")
-    _stage.pre_music = get_audio_or_create(_pre_music_path, _json_path)
+    var _pre_music_result = get_audio_or_create(_pre_music_path, _json_path)
+    if (_pre_music_result.is_failed()) {
+        return _pre_music_result
+    }
+    _stage.pre_music = _pre_music_result.data
 
     var _elite_music_path = variable_struct_get(_json,"elite_music")
-    _stage.elite_music = get_audio_or_create(_elite_music_path, _json_path)
+    var _elite_music_result = get_audio_or_create(_elite_music_path, _json_path)
+    if (_elite_music_result.is_failed()) {
+        return _elite_music_result
+    }
+    _stage.elite_music = _elite_music_result.data
 
     var _boss_music_path = variable_struct_get(_json,"boss_music")
-    _stage.boss_music = get_audio_or_create(_boss_music_path, _json_path)
+    var _boss_music_result = get_audio_or_create(_boss_music_path, _json_path)
+    if (_boss_music_result.is_failed()) {
+        return _boss_music_result
+    }
+    _stage.boss_music = _boss_music_result.data
 
-    return _stage
+    return new Result().success(_stage)
 }
 
 

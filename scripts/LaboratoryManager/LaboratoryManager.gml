@@ -40,7 +40,11 @@ function LaboratoryManager() constructor {
         }
 
         var _json = _result.data
-        var _stage = create_custom_stage(_json, _json_path)
+        var _stage_result = create_custom_stage(_json, _json_path)
+        if (_stage_result.is_failed()) {
+            return _stage_result
+        }
+        var _stage = _stage_result.data
         var _verify_result = verify_stage(_stage)
         if (_verify_result.is_failed()) {
             return _verify_result
