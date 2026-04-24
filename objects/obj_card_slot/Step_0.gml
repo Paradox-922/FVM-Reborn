@@ -124,6 +124,13 @@ if (is_selected) {
 		
         var card_shape = get_card_info_simple(card_id).shape
 		var card_data = deck_get_card_data(card_id,card_shape)
+		
+		if card_id == "magic_chicken"{
+			if global.prev_place_id != ""{
+				card_shape = get_card_info_simple(global.prev_place_id).shape
+				card_data = deck_get_card_data(global.prev_place_id,card_shape)
+			}
+		}
         
         var logical_x = mouse_x;
         var logical_y = mouse_y;
@@ -173,6 +180,9 @@ if (is_selected) {
             // 重置冷却计时器
             cooldown_timer = 0;
             is_ready = false;
+			if array_get_index(cooldown_ignore_list,card_id) == -1{
+				global.prev_place_id = card_id
+			}
             
 			if global.grid_terrains[grid_pos.row][grid_pos.col].type == "normal"{
 				audio_play_sound(snd_place1,0,0)
