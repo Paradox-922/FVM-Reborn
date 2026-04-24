@@ -4,6 +4,9 @@ image_speed = 0
 timer = 0
 row = 0
 state = "idle"
+can_loss = true
+
+move_speed = 4
 
 flash_speed = 6
 idle_anim = 10
