@@ -2,6 +2,7 @@
 function LaboratoryManager() constructor {
 
     self.dynamic_audios = {}
+    self.dynamic_sprites = {}
     self.stages = {}
     /// @type {Array<String>} 
     self.stage_ids = []
@@ -83,6 +84,33 @@ function LaboratoryManager() constructor {
         return _sound
     }
 
+    /// @param {String} _sprite_key
+    /// @returns {Asset.GMSprite|Undefined}
+    static _get_dynamic_sprite = function(_sprite_key) {
+        return variable_struct_get(self.dynamic_sprites, _sprite_key)
+    }
+
+    /// @param {String} _sprite_key
+    /// @param {Asset.GMSprite} _dynamic_sprite
+    static _add_dynamic_sprite = function(_sprite_key, _dynamic_sprite) {
+        variable_struct_set(self.dynamic_sprites, _sprite_key, _dynamic_sprite)
+    }
+
+    /// @param {String} _path
+    /// @returns {Asset.GMSprite|Undefined}
+    static load_dynamic_sprite = function(_path) {
+        var _spr = _get_dynamic_sprite(_path)
+        if (!is_undefined(_spr)) {
+            return _spr
+        }
+        var _result = self.file_util.load_sprite_from_path(_path)
+        if (_result.is_failed()) {
+            return undefined
+        }
+        _spr = _result.data
+        _add_dynamic_sprite(_path, _spr)
+        return _spr
+    }
 
     static register_all_stages = function() {
         var _level_datas = []
@@ -122,19 +150,33 @@ function LaboratoryManager() constructor {
     }
 
     static remove_all_audios = function() {
-        for (var i = 0; i < array_length(self.dynamic_audios); i++) {
-            audio_destroy_stream(self.dynamic_audios[i])
+        var _keys = variable_struct_get_names(self.dynamic_audios)
+        for (var i = 0; i < array_length(_keys); i++) {
+            var _snd = variable_struct_get(self.dynamic_audios, _keys[i])
+            audio_destroy_stream(_snd)
         }
+        self.dynamic_audios = {}
+    }
+
+    static remove_all_sprites = function() {
+        var _keys = variable_struct_get_names(self.dynamic_sprites)
+        for (var i = 0; i < array_length(_keys); i++) {
+            var _spr = variable_struct_get(self.dynamic_sprites, _keys[i])
+            sprite_delete(_spr)
+        }
+        self.dynamic_sprites = {}
     }
 
     static reset = function() {
         remove_all_audios()
+        remove_all_sprites()
         self.stages = {}
         self.stage_ids = []
     }
 
     static dispose = function() {
         remove_all_audios()
+        remove_all_sprites()
         self.stages = {}
         self.file_util = undefined
     }

@@ -128,23 +128,73 @@ function CustomStage() constructor {
 }
 
 /// @param {String} _path
+/// @returns {Bool}
+function laboratory_path_is_relative(_path) {
+    return string_starts_with(_path, "./")
+        || string_starts_with(_path, "../")
+        || string_starts_with(_path, ".\\")
+        || string_starts_with(_path, "..\\")
+}
+
+/// @param {String} _path
+/// @param {String} _path_prefix
+/// @returns {String}
+function laboratory_resolve_datafile_path(_path, _path_prefix) {
+    if (!string_ends_with(_path_prefix, "/") && !string_ends_with(_path_prefix, "\\")) {
+        _path_prefix = _path_prefix + "/"
+    }
+    return _path_prefix + "../" + _path
+}
+
+/// @param {String} _path
 /// @param {String} _path_prefix
 /// @returns {Struct.Result<Asset.GMSound>}
 function get_audio_or_create(_path, _path_prefix) {
-    if (string_starts_with(_path, "./") || string_starts_with(_path, "../") || string_starts_with(_path, ".\\") || string_starts_with(_path, "..\\")) {
+    if (is_undefined(_path) || string_length(string(_path)) == 0) {
+        return new Result().success(-1)
+    }
+    _path = string(_path)
+    if (laboratory_path_is_relative(_path)) {
         if (!string_ends_with(_path, ".ogg")) {
             return new Result().fail(
-                ErrorCode.INVALID_TYPE, 
-                "Failed to load audio for " + _path_prefix + "; Invalid audio type: " + _path + " should be .ogg")
+                ErrorCode.INVALID_TYPE,
+                "Failed to load audio for " + _path_prefix + "; invalid audio type: " + _path + " (expected .ogg)")
         }
-		if (!string_ends_with(_path_prefix, "/") && !string_ends_with(_path_prefix, "\\")) {
-			_path_prefix = _path_prefix + "/"
-		}
-        _path_prefix += "../"
-        var _audio = global.laboratory_manager.load_dynamic_audio(_path_prefix + _path)
-		return new Result().success(_audio)
-	}
+        var _full = laboratory_resolve_datafile_path(_path, _path_prefix)
+        var _audio = global.laboratory_manager.load_dynamic_audio(_full)
+        if (is_undefined(_audio)) {
+            return new Result().fail(
+                ErrorCode.LOAD_RESOURCE_FAILED,
+                "Failed to load audio for " + _path_prefix + ": " + _full)
+        }
+        return new Result().success(_audio)
+    }
+    return new Result().success(asset_get_index(_path))
+}
 
+/// @param {String} _path
+/// @param {String} _path_prefix
+/// @returns {Struct.Result<Asset.GMSprite>}
+function get_sprite_or_create(_path, _path_prefix) {
+    if (is_undefined(_path) || string_length(string(_path)) == 0) {
+        return new Result().success(-1)
+    }
+    _path = string(_path)
+    if (laboratory_path_is_relative(_path)) {
+        if (!string_ends_with(_path, ".png")) {
+            return new Result().fail(
+                ErrorCode.INVALID_TYPE,
+                "Failed to load sprite for " + _path_prefix + "; invalid image type: " + _path + " (expected .png)")
+        }
+        var _full = laboratory_resolve_datafile_path(_path, _path_prefix)
+        var _spr = global.laboratory_manager.load_dynamic_sprite(_full)
+        if (is_undefined(_spr)) {
+            return new Result().fail(
+                ErrorCode.LOAD_RESOURCE_FAILED,
+                "Failed to load sprite for " + _path_prefix + ": " + _full)
+        }
+        return new Result().success(_spr)
+    }
     return new Result().success(asset_get_index(_path))
 }
 
@@ -170,8 +220,12 @@ function create_custom_stage(_json, _json_path) {
     
     _stage.json_path = _json_path
 
-    var _sprite = variable_struct_get(_json,"map_sprite")
-    _stage.map_sprite = asset_get_index(_sprite) 
+    var _sprite_path = variable_struct_get(_json, "map_sprite")
+    var _sprite_result = get_sprite_or_create(_sprite_path, _json_path)
+    if (_sprite_result.is_failed()) {
+        return _sprite_result
+    }
+    _stage.map_sprite = _sprite_result.data
 
     /// @type {String} 
     var _pre_music_path = variable_struct_get(_json,"pre_music")
