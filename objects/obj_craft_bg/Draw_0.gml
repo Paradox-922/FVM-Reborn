@@ -64,16 +64,18 @@ if button_select == 0{
 		var card_slot_data = deck_get_card_data(card_id,card_data.shape)
 		var card_x = 42 + card_col*84
 		var card_y = 48+96 * card_row - y_offset
-		
-		draw_sprite_ext(spr_slot,0,card_x,card_y-3,0.25,0.25,0,c_white,1)
-		draw_sprite_ext(card_slot_data[? "sprite"],0,card_x,card_y+15,0.7,0.7,0,c_white,1)
-		draw_set_color(c_black);
-		draw_set_halign(fa_center);
-		draw_set_valign(fa_bottom);
-		draw_set_font(font_pixel)
-		draw_text(card_x,card_y+37,card_slot_data[? "cost"])
-		if card_data.max_level > 0{
-			draw_sprite_ext(spr_star_slot, card_data.max_level - 1, card_x-25, card_y-35,1.4,1.4,0,c_white,1);
+
+		if (card_slot_data != noone) {
+			draw_sprite_ext(spr_slot,0,card_x,card_y-3,0.25,0.25,0,c_white,1)
+			draw_sprite_ext(card_slot_data[? "sprite"],0,card_x,card_y+15,0.7,0.7,0,c_white,1)
+			draw_set_color(c_black);
+			draw_set_halign(fa_center);
+			draw_set_valign(fa_bottom);
+			draw_set_font(font_pixel)
+			draw_text(card_x,card_y+37,card_slot_data[? "cost"])
+			if card_data.max_level > 0{
+				draw_sprite_ext(spr_star_slot, card_data.max_level - 1, card_x-25, card_y-35,1.4,1.4,0,c_white,1);
+			}
 		}
 		
 		// 检查鼠标是否悬停在卡片上

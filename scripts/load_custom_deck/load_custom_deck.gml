@@ -7,7 +7,10 @@ function load_custom_deck(deck_index) {
     
     // 添加新卡牌
     for(var i = 0; i < array_length(global.save_data.saved_decks[deck_index].card_id); i++) {
-        add_to_deck(global.save_data.saved_decks[deck_index].card_id[i],get_card_info(global.save_data.saved_decks[deck_index].card_id[i]).shape);
+        var info = get_card_info(global.save_data.saved_decks[deck_index].card_id[i]);
+        if (info != false) {
+            add_to_deck(global.save_data.saved_decks[deck_index].card_id[i], info.shape);
+        }
     }
     
     // 重新创建卡槽（需在战斗房间调用）
