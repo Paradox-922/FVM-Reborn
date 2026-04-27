@@ -1,0 +1,10 @@
+image_xscale = 1.8
+image_yscale = 1.8
+image_speed = 0.5
+damage = 0
+timer = 0
+shape = 0
+grid_col = 0
+grid_row = 0
+damage_timer = 0 // 频率控制
+target_type = "pierce"

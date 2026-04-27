@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_cold_brew_machine",
+  "audioGroupId":{
+    "name":"sound",
+    "path":"audiogroups/sound",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.757551,
+  "exportDir":"",
+  "name":"snd_cold_brew_machine",
+  "parent":{
+    "name":"Sound Effect",
+    "path":"folders/声音/Mod Sound/Sound Effect.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_cold_brew_machine.mp3",
+  "volume":0.2,
+}

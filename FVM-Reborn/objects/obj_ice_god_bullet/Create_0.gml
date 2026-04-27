@@ -1,0 +1,9 @@
+image_xscale = 1.0
+image_yscale = 1.0
+damage_type = "normal"
+damage = 0
+target_enemy = noone
+hitted_enemy = noone
+move_speed = 0
+row = 0
+col = 0

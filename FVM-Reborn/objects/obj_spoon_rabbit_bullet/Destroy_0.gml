@@ -1,0 +1,23 @@
+var _x = x
+if instance_exists(hitted_enemy){
+	_x = hitted_enemy.x;
+}
+var _range = 165;
+var splash_ratio = 0.35
+
+with (obj_enemy_parent) {
+	if (hp > 0 
+	&& abs(x - _x) < _range 
+	&& grid_row <= other.row + 1
+	&& grid_row >= other.row - 1 
+	&& id != other.hitted_enemy  
+	and can_hit(other.target_type,target_type)) {
+	        
+	    // 对敌人造成溅射伤害
+	    damage_amount = other.damage * splash_ratio
+		damage_type = other.damage_type
+		event_user(0)
+	        
+	}
+}
+audio_play_sound(snd_spoon_rabbit,0,0)

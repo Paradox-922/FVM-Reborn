@@ -1,0 +1,21 @@
+event_inherited();
+
+atk = 20
+
+hp = 1800
+maxhp = 1800
+
+helmet_hp = 1440
+helmet_max_hp = 1440
+
+attack_anim = 6 //攻击动画帧数
+move_anim = 16
+death_anim = 11
+
+move_speed = 0.36
+
+reversed = false
+immune_to_ash = true
+
+armor_dropped = false
+arm_dropped = false

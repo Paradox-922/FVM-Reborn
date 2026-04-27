@@ -1,0 +1,12 @@
+damage = 0
+move_speed = 10
+row = 0
+damage_type = "normal"
+target_type = "normal"
+hitted_enemy = ds_list_create()
+damage_type = "pierce"
+target_type = "pierce"
+image_xscale = 1.3
+image_yscale = 2.0
+start_x = 0
+max_cols = 4

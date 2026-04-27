@@ -1,0 +1,21 @@
+var map_sprite = struct_get(ds_map_find_value(global.maps_map,current_map_id),"map_sprite")
+draw_sprite(map_sprite,0,room_width/2,room_height/2)
+
+if global.map_id == "delicious_island"{
+	if global.save_data.player.level == 6 && global.save_data.unlocked_items.elite_unlocked{
+		draw_set_alpha(0.5)
+		draw_set_colour(c_black)
+		draw_set_valign(fa_top)
+		draw_set_halign(fa_left)
+		draw_set_font(font_yuan)
+		var tooptip_x = 520
+		var tooptip_y = 560
+		var text = "神殿解锁条件\n击败一次洞君（"+string(global.save_data.unlocked_items.mario_mouse_killed)+"/1）\n击败一次阿诺（"+string(global.save_data.unlocked_items.arno_killed)+"/1）"
+		var tooptip_width = string_width(text)+10
+		var tooptip_height = string_height(text)+10
+		draw_rectangle(tooptip_x,tooptip_y,tooptip_x+tooptip_width,tooptip_y+tooptip_height,0)
+		draw_set_colour(c_white)
+		draw_set_alpha(1)
+		draw_text(tooptip_x+5,tooptip_y+5,text)
+	}
+}

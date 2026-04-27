@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_ice_god",
+  "audioGroupId":{
+    "name":"sound",
+    "path":"audiogroups/sound",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.27863947,
+  "exportDir":"",
+  "name":"snd_ice_god",
+  "parent":{
+    "name":"ice_god",
+    "path":"folders/精灵/MOD1/1-Gold card/ice_god.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_ice_god.ogg",
+  "volume":1.0,
+}

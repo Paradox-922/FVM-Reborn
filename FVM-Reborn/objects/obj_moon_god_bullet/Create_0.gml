@@ -1,0 +1,17 @@
+damage = 0
+move_speed = 0
+damage_type = "normal"
+target_type = "track"
+timer = 0
+target_enemy = noone
+banding_card_obj = noone
+row = 0
+hitted_enemy = noone
+hit_enemy = false
+splashed = false
+shape = 0
+scan_timer = 0;
+fly_dir = 0; 
+image_xscale = 1.5
+image_yscale = 1.5
+image_speed = 0

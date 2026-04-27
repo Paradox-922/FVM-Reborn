@@ -1,0 +1,17 @@
+event_inherited();
+
+atk = 20
+
+hp = 360
+maxhp = 360
+
+attack_anim = 7 //攻击动画帧数
+move_anim = 16
+death_anim = 17
+
+move_speed = 0.36
+
+reversed = false
+immune_to_ash = true
+
+arm_dropped = false
